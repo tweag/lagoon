@@ -1,0 +1,6 @@
+foo,bar
+1,2
+simple,easy
+"outer","quotes"
+"nested ""quotes""",easy
+inner "quotes",easy

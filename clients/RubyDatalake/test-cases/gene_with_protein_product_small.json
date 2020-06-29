@@ -1,0 +1,1621 @@
+{"response": {"docs":
+    [
+        {
+            "gene_family": [
+                "RNA binding motif containing"
+            ],
+            "date_approved_reserved": "2007-11-23",
+            "vega_id": "OTTHUMG00000018240",
+            "locus_group": "protein-coding gene",
+            "status": "Approved",
+            "alias_symbol": [
+                "ACF",
+                "ASP",
+                "ACF64",
+                "ACF65",
+                "APOBEC1CF"
+            ],
+            "_version_": 1556023384649760800,
+            "uuid": "f6aa1c14-533a-43f7-9c62-fb3f996398fd",
+            "refseq_accession": [
+                "NM_014576"
+            ],
+            "locus_type": "gene with protein product",
+            "gene_family_id": [
+                725
+            ],
+            "cosmic": "A1CF",
+            "hgnc_id": "HGNC:24086",
+            "rgd_id": [
+                "RGD:619834"
+            ],
+            "ensembl_gene_id": "ENSG00000148584",
+            "entrez_id": "29974",
+            "symbol": "A1CF",
+            "location": "10q11.23",
+            "name": "APOBEC1 complementation factor",
+            "date_modified": "2016-10-05",
+            "mgd_id": [
+                "MGI:1917115"
+            ],
+            "ucsc_id": "uc057tgv.1",
+            "uniprot_ids": [
+                "Q9NQ94"
+            ],
+            "ccds_id": [
+                "CCDS7241",
+                "CCDS7242",
+                "CCDS7243",
+                "CCDS73133"
+            ],
+            "ena": [
+                "AF271790"
+            ],
+            "pubmed_id": [
+                11815617,
+                11072063
+            ],
+            "location_sortable": "10q11.23"
+        },
+        {
+            "gene_family": [
+                "C3 and PZP like, alpha-2-macroglobulin domain containing"
+            ],
+            "date_approved_reserved": "1986-01-01",
+            "vega_id": "OTTHUMG00000150267",
+            "locus_group": "protein-coding gene",
+            "status": "Approved",
+            "alias_symbol": [
+                "FWP007",
+                "S863-7",
+                "CPAMD5"
+            ],
+            "_version_": 1556023384649760800,
+            "uuid": "17e3fb0b-4109-4677-b58e-7a993b7e8e6f",
+            "merops": "I39.001",
+            "refseq_accession": [
+                "NM_000014"
+            ],
+            "locus_type": "gene with protein product",
+            "gene_family_id": [
+                1234
+            ],
+            "cosmic": "A2M",
+            "hgnc_id": "HGNC:7",
+            "rgd_id": [
+                "RGD:2004"
+            ],
+            "ensembl_gene_id": "ENSG00000175899",
+            "entrez_id": "2",
+            "omim_id": [
+                103950
+            ],
+            "symbol": "A2M",
+            "location": "12p13.31",
+            "name": "alpha-2-macroglobulin",
+            "date_modified": "2015-08-24",
+            "mgd_id": [
+                "MGI:2449119"
+            ],
+            "ucsc_id": "uc001qvk.2",
+            "uniprot_ids": [
+                "P01023"
+            ],
+            "ccds_id": [
+                "CCDS44827"
+            ],
+            "ena": [
+                "BX647329",
+                "X68728",
+                "M11313"
+            ],
+            "pubmed_id": [
+                2408344,
+                9697696
+            ],
+            "location_sortable": "12p13.31"
+        },
+        {
+            "gene_family": [
+                "C3 and PZP like, alpha-2-macroglobulin domain containing"
+            ],
+            "vega_id": "OTTHUMG00000128499",
+            "locus_group": "protein-coding gene",
+            "alias_symbol": [
+                "FLJ25179",
+                "p170"
+            ],
+            "_version_": 1556023384649760800,
+            "uuid": "bc813447-6290-49f4-8930-a213a93fbe96",
+            "prev_name": [
+                "C3 and PZP-like, alpha-2-macroglobulin domain containing 9"
+            ],
+            "refseq_accession": [
+                "NM_144670"
+            ],
+            "gene_family_id": [
+                1234
+            ],
+            "cosmic": "A2ML1",
+            "hgnc_id": "HGNC:23336",
+            "entrez_id": "144568",
+            "symbol": "A2ML1",
+            "location": "12p13.31",
+            "name": "alpha-2-macroglobulin like 1",
+            "prev_symbol": [
+                "CPAMD9"
+            ],
+            "orphanet": 410627,
+            "date_approved_reserved": "2005-07-20",
+            "status": "Approved",
+            "merops": "I39.007",
+            "locus_type": "gene with protein product",
+            "rgd_id": [
+                "RGD:1565709"
+            ],
+            "ensembl_gene_id": "ENSG00000166535",
+            "date_name_changed": "2016-03-07",
+            "omim_id": [
+                610627
+            ],
+            "date_modified": "2016-12-08",
+            "ucsc_id": "uc001quz.6",
+            "uniprot_ids": [
+                "A8K2U0"
+            ],
+            "ena": [
+                "AK057908"
+            ],
+            "ccds_id": [
+                "CCDS8596",
+                "CCDS73439"
+            ],
+            "pubmed_id": [
+                16298998
+            ],
+            "date_symbol_changed": "2005-09-01",
+            "location_sortable": "12p13.31"
+        },
+        {
+            "gene_family": [
+                "Glycosyltransferase family 6"
+            ],
+            "date_approved_reserved": "2005-05-06",
+            "alias_name": [
+                "iGb3 synthase",
+                "isoglobotriaosylceramide synthase"
+            ],
+            "vega_id": "OTTHUMG00000004125",
+            "locus_group": "protein-coding gene",
+            "status": "Approved",
+            "alias_symbol": [
+                "IGBS3S",
+                "IGB3S"
+            ],
+            "_version_": 1556023384650809300,
+            "uuid": "ada926f2-3034-40dd-b16e-7a20c7f677d5",
+            "prev_name": [
+                "alpha 1,3-galactosyltransferase 2, pseudogene"
+            ],
+            "refseq_accession": [
+                "NM_001080438"
+            ],
+            "locus_type": "gene with protein product",
+            "gene_family_id": [
+                429
+            ],
+            "hgnc_id": "HGNC:30005",
+            "rgd_id": [
+                "RGD:727913"
+            ],
+            "ensembl_gene_id": "ENSG00000184389",
+            "entrez_id": "127550",
+            "symbol": "A3GALT2",
+            "date_name_changed": "2013-03-11",
+            "location": "1p35.1",
+            "name": "alpha 1,3-galactosyltransferase 2",
+            "date_modified": "2016-01-22",
+            "mgd_id": [
+                "MGI:2685279"
+            ],
+            "ucsc_id": "uc031plq.1",
+            "prev_symbol": [
+                "A3GALT2P"
+            ],
+            "uniprot_ids": [
+                "U3KPV4"
+            ],
+            "ccds_id": [
+                "CCDS60080"
+            ],
+            "date_symbol_changed": "2013-03-11",
+            "pubmed_id": [
+                10854427,
+                18630988
+            ],
+            "location_sortable": "01p35.1"
+        },
+        {
+            "gene_family": [
+                "Alpha 1,4-glycosyltransferases"
+            ],
+            "date_approved_reserved": "2002-02-06",
+            "alias_name": [
+                "Gb3 synthase",
+                "CD77 synthase",
+                "globotriaosylceramide synthase",
+                "lactosylceramide 4-alpha-galactosyltransferase"
+            ],
+            "vega_id": "OTTHUMG00000150744",
+            "locus_group": "protein-coding gene",
+            "status": "Approved",
+            "alias_symbol": [
+                "A14GALT",
+                "Gb3S",
+                "P(k)",
+                "P1"
+            ],
+            "_version_": 1556023384651858000,
+            "uuid": "d17aa39c-1c13-411c-8c2e-bbe6fd3e4839",
+            "prev_name": [
+                "alpha 1,4-galactosyltransferase (globotriaosylceramide synthase, P blood group)"
+            ],
+            "lsdb": [
+                "LRG_795|http://www.lrg-sequence.org/LRG/LRG_795"
+            ],
+            "refseq_accession": [
+                "NM_017436"
+            ],
+            "locus_type": "gene with protein product",
+            "gene_family_id": [
+                442
+            ],
+            "cosmic": "A4GALT",
+            "hgnc_id": "HGNC:18149",
+            "rgd_id": [
+                "RGD:621583"
+            ],
+            "ensembl_gene_id": "ENSG00000128274",
+            "entrez_id": "53947",
+            "omim_id": [
+                607922
+            ],
+            "symbol": "A4GALT",
+            "date_name_changed": "2008-07-31",
+            "location": "22q13.2",
+            "name": "alpha 1,4-galactosyltransferase",
+            "date_modified": "2017-01-07",
+            "mgd_id": [
+                "MGI:3512453"
+            ],
+            "ucsc_id": "uc062ewl.1",
+            "enzyme_id": [
+                "2.4.1.228"
+            ],
+            "uniprot_ids": [
+                "Q9NPC4"
+            ],
+            "ccds_id": [
+                "CCDS14041"
+            ],
+            "pubmed_id": [
+                10854428
+            ],
+            "location_sortable": "22q13.2"
+        },
+        {
+            "gene_family": [
+                "Alpha 1,4-glycosyltransferases"
+            ],
+            "date_approved_reserved": "2004-07-12",
+            "vega_id": "OTTHUMG00000159820",
+            "locus_group": "protein-coding gene",
+            "status": "Approved",
+            "alias_symbol": [
+                "alpha4GnT"
+            ],
+            "_version_": 1556023384651858000,
+            "uuid": "81c259d2-157e-4cbe-837e-0355fa8d4ff2",
+            "refseq_accession": [
+                "NM_016161"
+            ],
+            "locus_type": "gene with protein product",
+            "gene_family_id": [
+                442
+            ],
+            "cosmic": "A4GNT",
+            "hgnc_id": "HGNC:17968",
+            "rgd_id": [
+                "RGD:1590210"
+            ],
+            "ensembl_gene_id": "ENSG00000118017",
+            "entrez_id": "51146",
+            "omim_id": [
+                616709
+            ],
+            "symbol": "A4GNT",
+            "location": "3q22.3",
+            "name": "alpha-1,4-N-acetylglucosaminyltransferase",
+            "date_modified": "2016-10-05",
+            "mgd_id": [
+                "MGI:2143261"
+            ],
+            "ucsc_id": "uc003ers.2",
+            "uniprot_ids": [
+                "Q9UNA3"
+            ],
+            "ccds_id": [
+                "CCDS3097"
+            ],
+            "ena": [
+                "AF141315"
+            ],
+            "pubmed_id": [
+                10430883
+            ],
+            "location_sortable": "03q22.3"
+        },
+        {
+            "gene_family": [
+                "WD repeat domain containing",
+                "Nucleoporins"
+            ],
+            "date_approved_reserved": "2000-11-08",
+            "alias_name": [
+                "aladin",
+                "Allgrove, triple-A",
+                "adracalin"
+            ],
+            "vega_id": "OTTHUMG00000169729",
+            "locus_group": "protein-coding gene",
+            "status": "Approved",
+            "_version_": 1556023384652906500,
+            "uuid": "fcd2a761-9ed4-4929-8249-8aa23a3c52e4",
+            "prev_name": [
+                "achalasia, adrenocortical insufficiency, alacrimia (Allgrove, triple-A)",
+                "achalasia, adrenocortical insufficiency, alacrimia"
+            ],
+            "refseq_accession": [
+                "NM_001173466"
+            ],
+            "locus_type": "gene with protein product",
+            "gene_family_id": [
+                362,
+                1051
+            ],
+            "cosmic": "AAAS",
+            "hgnc_id": "HGNC:13666",
+            "rgd_id": [
+                "RGD:1308701"
+            ],
+            "ensembl_gene_id": "ENSG00000094914",
+            "entrez_id": "8086",
+            "omim_id": [
+                605378
+            ],
+            "symbol": "AAAS",
+            "date_name_changed": "2015-12-14",
+            "location": "12q13.13",
+            "name": "aladin WD repeat nucleoporin",
+            "date_modified": "2016-10-05",
+            "mgd_id": [
+                "MGI:2443767"
+            ],
+            "ucsc_id": "uc001scr.5",
+            "uniprot_ids": [
+                "Q9NRG9"
+            ],
+            "orphanet": 117613,
+            "ccds_id": [
+                "CCDS8856",
+                "CCDS53797"
+            ],
+            "ena": [
+                "AJ289841"
+            ],
+            "pubmed_id": [
+                11062474
+            ],
+            "location_sortable": "12q13.13"
+        },
+        {
+            "gene_family": [
+                "Acyl-CoA synthetase family"
+            ],
+            "date_approved_reserved": "2003-06-02",
+            "alias_name": [
+                "acyl-CoA synthetase family member 1"
+            ],
+            "vega_id": "OTTHUMG00000168550",
+            "locus_group": "protein-coding gene",
+            "status": "Approved",
+            "alias_symbol": [
+                "FLJ12389",
+                "SUR-5",
+                "ACSF1"
+            ],
+            "_version_": 1556023384652906500,
+            "uuid": "68517ac6-ea7f-4cc7-9ca4-5c2893771b2c",
+            "refseq_accession": [
+                "NM_023928"
+            ],
+            "locus_type": "gene with protein product",
+            "gene_family_id": [
+                40
+            ],
+            "cosmic": "AACS",
+            "hgnc_id": "HGNC:21298",
+            "rgd_id": [
+                "RGD:708522"
+            ],
+            "ensembl_gene_id": "ENSG00000081760",
+            "entrez_id": "65985",
+            "omim_id": [
+                614364
+            ],
+            "symbol": "AACS",
+            "location": "12q24.31",
+            "name": "acetoacetyl-CoA synthetase",
+            "date_modified": "2015-08-24",
+            "mgd_id": [
+                "MGI:1926144"
+            ],
+            "ucsc_id": "uc001uhc.4",
+            "enzyme_id": [
+                "6.2.1.16"
+            ],
+            "uniprot_ids": [
+                "Q86V21"
+            ],
+            "ccds_id": [
+                "CCDS9263"
+            ],
+            "ena": [
+                "AK022451"
+            ],
+            "pubmed_id": [
+                12623130,
+                17762044
+            ],
+            "location_sortable": "12q24.31"
+        },
+        {
+            "gene_family": [
+                "Lipases",
+                "Arylacetamide deacetylase family"
+            ],
+            "date_approved_reserved": "1996-12-27",
+            "vega_id": "OTTHUMG00000159876",
+            "locus_group": "protein-coding gene",
+            "status": "Approved",
+            "alias_symbol": [
+                "DAC",
+                "CES5A1"
+            ],
+            "_version_": 1556023384653955000,
+            "uuid": "010e5ab8-f668-4d21-ba48-bfcd4486f5cd",
+            "merops": "S09.991",
+            "prev_name": [
+                "arylacetamide deacetylase (esterase)"
+            ],
+            "refseq_accession": [
+                "NM_001086"
+            ],
+            "locus_type": "gene with protein product",
+            "gene_family_id": [
+                464,
+                465
+            ],
+            "cosmic": "AADAC",
+            "hgnc_id": "HGNC:17",
+            "rgd_id": [
+                "RGD:631440"
+            ],
+            "ensembl_gene_id": "ENSG00000114771",
+            "entrez_id": "13",
+            "omim_id": [
+                600338
+            ],
+            "symbol": "AADAC",
+            "date_name_changed": "2012-07-13",
+            "location": "3q25.1",
+            "name": "arylacetamide deacetylase",
+            "date_modified": "2015-08-24",
+            "mgd_id": [
+                "MGI:1915008"
+            ],
+            "ucsc_id": "uc003eze.4",
+            "enzyme_id": [
+                "3.1.1.3"
+            ],
+            "uniprot_ids": [
+                "P22760"
+            ],
+            "ccds_id": [
+                "CCDS33877"
+            ],
+            "ena": [
+                "L32179"
+            ],
+            "pubmed_id": [
+                8063807
+            ],
+            "location_sortable": "03q25.1"
+        },
+        {
+            "gene_family": [
+                "Arylacetamide deacetylase family"
+            ],
+            "date_approved_reserved": "2005-03-18",
+            "vega_id": "OTTHUMG00000155914",
+            "locus_group": "protein-coding gene",
+            "status": "Approved",
+            "alias_symbol": [
+                "MGC72001"
+            ],
+            "_version_": 1556023384653955000,
+            "uuid": "cb02cb72-9d08-429e-ab6c-5e46f2cf1926",
+            "refseq_accession": [
+                "NM_207365"
+            ],
+            "locus_type": "gene with protein product",
+            "gene_family_id": [
+                465
+            ],
+            "cosmic": "AADACL2",
+            "hgnc_id": "HGNC:24427",
+            "rgd_id": [
+                "RGD:1563197"
+            ],
+            "ensembl_gene_id": "ENSG00000197953",
+            "entrez_id": "344752",
+            "symbol": "AADACL2",
+            "date_name_changed": "2016-05-26",
+            "location": "3q25.1",
+            "name": "arylacetamide deacetylase like 2",
+            "date_modified": "2016-05-26",
+            "mgd_id": [
+                "MGI:3646333"
+            ],
+            "ucsc_id": "uc003ezc.4",
+            "uniprot_ids": [
+                "Q6P093"
+            ],
+            "ccds_id": [
+                "CCDS3161"
+            ],
+            "ena": [
+                "BC065724"
+            ],
+            "pubmed_id": [
+                25715734
+            ],
+            "location_sortable": "03q25.1"
+        },
+        {
+            "gene_family": [
+                "Arylacetamide deacetylase family"
+            ],
+            "date_approved_reserved": "2006-06-30",
+            "vega_id": "OTTHUMG00000001887",
+            "locus_group": "protein-coding gene",
+            "status": "Approved",
+            "alias_symbol": [
+                "OTTHUMG00000001887"
+            ],
+            "_version_": 1556023384653955000,
+            "uuid": "4f788d2e-5fe0-4d47-a7e7-54f6b7cee4eb",
+            "refseq_accession": [
+                "NM_001103170"
+            ],
+            "locus_type": "gene with protein product",
+            "gene_family_id": [
+                465
+            ],
+            "cosmic": "AADACL3",
+            "hgnc_id": "HGNC:32037",
+            "rgd_id": [
+                "RGD:1563257"
+            ],
+            "ensembl_gene_id": "ENSG00000188984",
+            "entrez_id": "126767",
+            "symbol": "AADACL3",
+            "date_name_changed": "2016-05-26",
+            "location": "1p36.21",
+            "name": "arylacetamide deacetylase like 3",
+            "date_modified": "2016-05-26",
+            "mgd_id": [
+                "MGI:2685281"
+            ],
+            "ucsc_id": "uc057ckc.1",
+            "uniprot_ids": [
+                "Q5VUY0"
+            ],
+            "ccds_id": [
+                "CCDS41253"
+            ],
+            "location_sortable": "01p36.21"
+        },
+        {
+            "gene_family": [
+                "Arylacetamide deacetylase family"
+            ],
+            "date_approved_reserved": "2006-06-30",
+            "vega_id": "OTTHUMG00000001889",
+            "locus_group": "protein-coding gene",
+            "status": "Approved",
+            "alias_symbol": [
+                "OTTHUMG00000001889"
+            ],
+            "_version_": 1556023384655003600,
+            "uuid": "78fbc100-bc43-4b58-8249-6df62cbbce04",
+            "refseq_accession": [
+                "NM_001013630"
+            ],
+            "locus_type": "gene with protein product",
+            "gene_family_id": [
+                465
+            ],
+            "cosmic": "AADACL4",
+            "hgnc_id": "HGNC:32038",
+            "rgd_id": [
+                "RGD:1565761"
+            ],
+            "ensembl_gene_id": "ENSG00000204518",
+            "entrez_id": "343066",
+            "symbol": "AADACL4",
+            "date_name_changed": "2016-05-26",
+            "location": "1p36.21",
+            "name": "arylacetamide deacetylase like 4",
+            "date_modified": "2016-05-26",
+            "mgd_id": [
+                "MGI:3650257"
+            ],
+            "ucsc_id": "uc001auf.3",
+            "uniprot_ids": [
+                "Q5VUY2"
+            ],
+            "ccds_id": [
+                "CCDS30590"
+            ],
+            "location_sortable": "01p36.21"
+        },
+        {
+            "date_approved_reserved": "2002-01-16",
+            "alias_name": [
+                "kynurenine aminotransferase II",
+                "L kynurenine/alpha aminoadipate aminotransferase"
+            ],
+            "vega_id": "OTTHUMG00000160912",
+            "locus_group": "protein-coding gene",
+            "status": "Approved",
+            "alias_symbol": [
+                "KATII",
+                "KAT2",
+                "KYAT2"
+            ],
+            "_version_": 1556023384655003600,
+            "uuid": "2ccd7382-5620-440c-9d7c-ff84dee05796",
+            "refseq_accession": [
+                "NM_016228"
+            ],
+            "locus_type": "gene with protein product",
+            "cosmic": "AADAT",
+            "hgnc_id": "HGNC:17929",
+            "rgd_id": [
+                "RGD:2948"
+            ],
+            "ensembl_gene_id": "ENSG00000109576",
+            "entrez_id": "51166",
+            "omim_id": [
+                611754
+            ],
+            "symbol": "AADAT",
+            "location": "4q33",
+            "name": "aminoadipate aminotransferase",
+            "date_modified": "2016-04-26",
+            "mgd_id": [
+                "MGI:1345167"
+            ],
+            "ucsc_id": "uc032udw.1",
+            "enzyme_id": [
+                "2.6.1.39",
+                "2.6.1.7"
+            ],
+            "uniprot_ids": [
+                "Q8N5Z0"
+            ],
+            "ccds_id": [
+                "CCDS3814",
+                "CCDS75209"
+            ],
+            "ena": [
+                "AF097994"
+            ],
+            "pubmed_id": [
+                12126930,
+                10441733,
+                18056995
+            ],
+            "location_sortable": "04q33"
+        },
+        {
+            "date_approved_reserved": "2002-04-29",
+            "vega_id": "OTTHUMG00000020299",
+            "locus_group": "protein-coding gene",
+            "status": "Approved",
+            "_version_": 1556023384655003600,
+            "uuid": "d730aa1d-e590-4af1-9069-f949176d3f02",
+            "prev_name": [
+                "chromosome 9 open reading frame 21"
+            ],
+            "refseq_accession": [
+                "NM_153698"
+            ],
+            "locus_type": "gene with protein product",
+            "hgnc_id": "HGNC:16881",
+            "rgd_id": [
+                "RGD:1589650"
+            ],
+            "ensembl_gene_id": "ENSG00000158122",
+            "entrez_id": "195827",
+            "symbol": "AAED1",
+            "date_name_changed": "2012-03-06",
+            "location": "9q22.33",
+            "name": "AhpC/TSA antioxidant enzyme domain containing 1",
+            "date_modified": "2016-10-05",
+            "mgd_id": [
+                "MGI:1913379"
+            ],
+            "ucsc_id": "uc004awm.4",
+            "prev_symbol": [
+                "C9orf21"
+            ],
+            "uniprot_ids": [
+                "Q7RTV5"
+            ],
+            "ccds_id": [
+                "CCDS35073"
+            ],
+            "ena": [
+                "BK000255"
+            ],
+            "date_symbol_changed": "2012-03-06",
+            "location_sortable": "09q22.33"
+        },
+        {
+            "date_approved_reserved": "2009-07-20",
+            "vega_id": "OTTHUMG00000172246",
+            "locus_group": "protein-coding gene",
+            "status": "Approved",
+            "alias_symbol": [
+                "FLJ11506",
+                "p34"
+            ],
+            "_version_": 1556023384656052200,
+            "uuid": "9f03112b-9fec-4a7b-b680-1ebd750d7e06",
+            "refseq_accession": [
+                "NM_024666"
+            ],
+            "locus_type": "gene with protein product",
+            "cosmic": "AAGAB",
+            "hgnc_id": "HGNC:25662",
+            "rgd_id": [
+                "RGD:621601"
+            ],
+            "ensembl_gene_id": "ENSG00000103591",
+            "entrez_id": "79719",
+            "omim_id": [
+                614888
+            ],
+            "symbol": "AAGAB",
+            "date_name_changed": "2009-07-20",
+            "location": "15q23",
+            "name": "alpha- and gamma-adaptin binding protein",
+            "date_modified": "2015-01-28",
+            "mgd_id": [
+                "MGI:1914189"
+            ],
+            "ucsc_id": "uc002aqk.6",
+            "uniprot_ids": [
+                "Q6PD74"
+            ],
+            "orphanet": 317366,
+            "ccds_id": [
+                "CCDS42050",
+                "CCDS61679"
+            ],
+            "ena": [
+                "AL136715"
+            ],
+            "pubmed_id": [
+                11230166,
+                10477754
+            ],
+            "location_sortable": "15q23"
+        },
+        {
+            "date_approved_reserved": "2003-07-21",
+            "vega_id": "OTTHUMG00000129648",
+            "locus_group": "protein-coding gene",
+            "status": "Approved",
+            "alias_symbol": [
+                "KIAA1048",
+                "DKFZp686K16132"
+            ],
+            "_version_": 1556023384656052200,
+            "uuid": "159f9202-9907-4135-b58c-06b2aadd6fc7",
+            "refseq_accession": [
+                "NM_014911"
+            ],
+            "locus_type": "gene with protein product",
+            "iuphar": "objectId:1921",
+            "cosmic": "AAK1",
+            "hgnc_id": "HGNC:19679",
+            "rgd_id": [
+                "RGD:1305520"
+            ],
+            "ensembl_gene_id": "ENSG00000115977",
+            "entrez_id": "22848",
+            "omim_id": [
+                616405
+            ],
+            "symbol": "AAK1",
+            "location": "2p13.3",
+            "name": "AP2 associated kinase 1",
+            "date_modified": "2015-08-24",
+            "mgd_id": [
+                "MGI:1098687"
+            ],
+            "ucsc_id": "uc002sfp.3",
+            "uniprot_ids": [
+                "Q2M2I8"
+            ],
+            "ccds_id": [
+                "CCDS1893"
+            ],
+            "ena": [
+                "AB028971"
+            ],
+            "pubmed_id": [
+                11877461,
+                12471243
+            ],
+            "location_sortable": "02p13.3"
+        },
+        {
+            "date_approved_reserved": "2006-03-27",
+            "vega_id": "OTTHUMG00000166651",
+            "locus_group": "protein-coding gene",
+            "status": "Approved",
+            "alias_symbol": [
+                "PTD015",
+                "FLJ21035",
+                "CK067"
+            ],
+            "_version_": 1556023384656052200,
+            "uuid": "99368f06-bdf8-46a5-aee7-34e632425b08",
+            "prev_name": [
+                "chromosome 11 open reading frame 67"
+            ],
+            "refseq_accession": [
+                "NM_024684"
+            ],
+            "locus_type": "gene with protein product",
+            "hgnc_id": "HGNC:30205",
+            "rgd_id": [
+                "RGD:1561459"
+            ],
+            "ensembl_gene_id": "ENSG00000087884",
+            "entrez_id": "28971",
+            "symbol": "AAMDC",
+            "date_name_changed": "2016-06-21",
+            "location": "11q14.1",
+            "name": "adipogenesis associated Mth938 domain containing",
+            "date_modified": "2016-06-21",
+            "mgd_id": [
+                "MGI:1913523"
+            ],
+            "ucsc_id": "uc058fuq.1",
+            "prev_symbol": [
+                "C11orf67"
+            ],
+            "uniprot_ids": [
+                "Q9H7C9"
+            ],
+            "ccds_id": [
+                "CCDS8254",
+                "CCDS81604",
+                "CCDS81605"
+            ],
+            "ena": [
+                "BC016854"
+            ],
+            "date_symbol_changed": "2012-10-08",
+            "pubmed_id": [
+                22279136
+            ],
+            "location_sortable": "11q14.1"
+        },
+        {
+            "gene_family": [
+                "WD repeat domain containing"
+            ],
+            "date_approved_reserved": "1996-11-13",
+            "vega_id": "OTTHUMG00000155202",
+            "locus_group": "protein-coding gene",
+            "status": "Approved",
+            "_version_": 1556023384657100800,
+            "uuid": "d5ce8cdd-01dc-488f-a025-6513906d4fa0",
+            "refseq_accession": [
+                "NM_001087"
+            ],
+            "locus_type": "gene with protein product",
+            "gene_family_id": [
+                362
+            ],
+            "cosmic": "AAMP",
+            "hgnc_id": "HGNC:18",
+            "rgd_id": [
+                "RGD:1306281"
+            ],
+            "ensembl_gene_id": "ENSG00000127837",
+            "entrez_id": "14",
+            "omim_id": [
+                603488
+            ],
+            "symbol": "AAMP",
+            "date_name_changed": "2015-12-08",
+            "location": "2q35",
+            "name": "angio associated migratory cell protein",
+            "date_modified": "2016-10-04",
+            "mgd_id": [
+                "MGI:107809"
+            ],
+            "ucsc_id": "uc002vhk.4",
+            "uniprot_ids": [
+                "Q13685"
+            ],
+            "ccds_id": [
+                "CCDS33378",
+                "CCDS77530"
+            ],
+            "ena": [
+                "AB209790"
+            ],
+            "pubmed_id": [
+                7743515
+            ],
+            "location_sortable": "02q35"
+        },
+        {
+            "gene_family": [
+                "GCN5 related N-acetyltransferases"
+            ],
+            "date_approved_reserved": "1995-12-13",
+            "alias_name": [
+                "serotonin N-acetyltransferase"
+            ],
+            "vega_id": "OTTHUMG00000180179",
+            "locus_group": "protein-coding gene",
+            "status": "Approved",
+            "alias_symbol": [
+                "SNAT"
+            ],
+            "_version_": 1556023384657100800,
+            "uuid": "271bce8a-972e-4b99-8117-1d3b845e75d9",
+            "prev_name": [
+                "arylalkylamine N-acetyltransferase"
+            ],
+            "refseq_accession": [
+                "NM_001088"
+            ],
+            "locus_type": "gene with protein product",
+            "gene_family_id": [
+                1134
+            ],
+            "cosmic": "AANAT",
+            "hgnc_id": "HGNC:19",
+            "rgd_id": [
+                "RGD:2006"
+            ],
+            "ensembl_gene_id": "ENSG00000129673",
+            "entrez_id": "15",
+            "omim_id": [
+                600950
+            ],
+            "symbol": "AANAT",
+            "date_name_changed": "2010-05-07",
+            "location": "17q25.1",
+            "name": "aralkylamine N-acetyltransferase",
+            "date_modified": "2014-11-19",
+            "mgd_id": [
+                "MGI:1328365"
+            ],
+            "ucsc_id": "uc002jro.4",
+            "enzyme_id": [
+                "2.3.1.87"
+            ],
+            "uniprot_ids": [
+                "Q16613"
+            ],
+            "orphanet": 469884,
+            "ccds_id": [
+                "CCDS11745",
+                "CCDS54169"
+            ],
+            "ena": [
+                "U40347"
+            ],
+            "pubmed_id": [
+                8661026
+            ],
+            "location_sortable": "17q25.1"
+        },
+        {
+            "date_approved_reserved": "2001-06-21",
+            "vega_id": "OTTHUMG00000032380",
+            "locus_group": "protein-coding gene",
+            "status": "Approved",
+            "alias_symbol": [
+                "bA234K24.2"
+            ],
+            "_version_": 1556023384657100800,
+            "uuid": "efa952fd-481b-4843-95b3-89153964044c",
+            "prev_name": [
+                "chromosome 20 open reading frame 4",
+                "AAR2 splicing factor homolog (S. cerevisiae)"
+            ],
+            "refseq_accession": [
+                "NM_015511"
+            ],
+            "locus_type": "gene with protein product",
+            "hgnc_id": "HGNC:15886",
+            "rgd_id": [
+                "RGD:1311066"
+            ],
+            "ensembl_gene_id": "ENSG00000131043",
+            "entrez_id": "25980",
+            "symbol": "AAR2",
+            "date_name_changed": "2015-07-02",
+            "location": "20q11.23",
+            "name": "AAR2 splicing factor homolog",
+            "date_modified": "2016-04-05",
+            "mgd_id": [
+                "MGI:1915545"
+            ],
+            "ucsc_id": "uc002xfc.4",
+            "prev_symbol": [
+                "C20orf4"
+            ],
+            "uniprot_ids": [
+                "Q9Y312"
+            ],
+            "ccds_id": [
+                "CCDS13273"
+            ],
+            "date_symbol_changed": "2012-07-20",
+            "pubmed_id": [
+                26527271
+            ],
+            "location_sortable": "20q11.23"
+        },
+        {
+            "date_approved_reserved": "2009-01-23",
+            "alias_name": [
+                "Alanine and arginine-rich domain-containing protein"
+            ],
+            "vega_id": "OTTHUMG00000164961",
+            "locus_group": "protein-coding gene",
+            "status": "Approved",
+            "alias_symbol": [
+                "LOC441376"
+            ],
+            "_version_": 1556023384657100800,
+            "uuid": "c18b4195-0e37-4f35-a482-11caca9bf08c",
+            "prev_name": [
+                "chromosome 8 open reading frame 85"
+            ],
+            "refseq_accession": [
+                "NM_001025357"
+            ],
+            "locus_type": "gene with protein product",
+            "hgnc_id": "HGNC:33842",
+            "rgd_id": [
+                "RGD:631378"
+            ],
+            "ensembl_gene_id": "ENSG00000205002",
+            "entrez_id": "441376",
+            "symbol": "AARD",
+            "date_name_changed": "2012-04-19",
+            "location": "8q24.11",
+            "name": "alanine and arginine rich domain containing protein",
+            "date_modified": "2012-04-19",
+            "mgd_id": [
+                "MGI:2181621"
+            ],
+            "ucsc_id": "uc003yof.4",
+            "prev_symbol": [
+                "C8orf85"
+            ],
+            "uniprot_ids": [
+                "Q4LEZ3"
+            ],
+            "ccds_id": [
+                "CCDS34935"
+            ],
+            "ena": [
+                "AB181519",
+                "BC140924"
+            ],
+            "date_symbol_changed": "2012-04-19",
+            "location_sortable": "08q24.11"
+        },
+        {
+            "gene_family": [
+                "Aminoacyl tRNA synthetases, Class II"
+            ],
+            "date_approved_reserved": "1995-07-11",
+            "alias_name": [
+                "alanine tRNA ligase 1, cytoplasmic"
+            ],
+            "vega_id": "OTTHUMG00000177042",
+            "locus_group": "protein-coding gene",
+            "status": "Approved",
+            "alias_symbol": [
+                "CMT2N",
+                "AlaRS"
+            ],
+            "_version_": 1556023384658149400,
+            "uuid": "f1532194-6a95-46c5-9ed6-2492ce9839fe",
+            "lsdb": [
+                "LRG_359|http://www.lrg-sequence.org/LRG/LRG_359"
+            ],
+            "refseq_accession": [
+                "NM_001605"
+            ],
+            "locus_type": "gene with protein product",
+            "gene_family_id": [
+                132
+            ],
+            "cosmic": "AARS",
+            "hgnc_id": "HGNC:20",
+            "rgd_id": [
+                "RGD:1304832"
+            ],
+            "ensembl_gene_id": "ENSG00000090861",
+            "entrez_id": "16",
+            "omim_id": [
+                601065
+            ],
+            "symbol": "AARS",
+            "location": "16q22.1",
+            "name": "alanyl-tRNA synthetase",
+            "date_modified": "2017-01-07",
+            "mgd_id": [
+                "MGI:2384560"
+            ],
+            "ucsc_id": "uc002eyn.2",
+            "enzyme_id": [
+                "6.1.1.7"
+            ],
+            "uniprot_ids": [
+                "P49588"
+            ],
+            "orphanet": 232194,
+            "ccds_id": [
+                "CCDS32474"
+            ],
+            "ena": [
+                "D32050"
+            ],
+            "pubmed_id": [
+                8595897
+            ],
+            "location_sortable": "16q22.1"
+        },
+        {
+            "gene_family": [
+                "Aminoacyl tRNA synthetases, Class II"
+            ],
+            "date_approved_reserved": "2003-05-08",
+            "alias_name": [
+                "alanine tRNA ligase 2, mitochondrial"
+            ],
+            "vega_id": "OTTHUMG00000014766",
+            "locus_group": "protein-coding gene",
+            "status": "Approved",
+            "alias_symbol": [
+                "KIAA1270",
+                "bA444E17.1"
+            ],
+            "_version_": 1556023384658149400,
+            "uuid": "411d58d4-418c-44b8-a26b-506b32b89d47",
+            "prev_name": [
+                "alanyl-tRNA synthetase like",
+                "alanyl-tRNA synthetase 2, mitochondrial (putative)"
+            ],
+            "refseq_accession": [
+                "NM_020745"
+            ],
+            "locus_type": "gene with protein product",
+            "gene_family_id": [
+                132
+            ],
+            "cosmic": "AARS2",
+            "hgnc_id": "HGNC:21022",
+            "rgd_id": [
+                "RGD:1310617"
+            ],
+            "ensembl_gene_id": "ENSG00000124608",
+            "entrez_id": "57505",
+            "omim_id": [
+                612035
+            ],
+            "symbol": "AARS2",
+            "date_name_changed": "2012-10-26",
+            "location": "6p21.1",
+            "name": "alanyl-tRNA synthetase 2, mitochondrial",
+            "date_modified": "2015-08-26",
+            "mgd_id": [
+                "MGI:2681839"
+            ],
+            "ucsc_id": "uc010jza.2",
+            "prev_symbol": [
+                "AARSL"
+            ],
+            "enzyme_id": [
+                "6.1.1.7"
+            ],
+            "uniprot_ids": [
+                "Q5JTZ9"
+            ],
+            "orphanet": 269639,
+            "ccds_id": [
+                "CCDS34464"
+            ],
+            "ena": [
+                "AB033096"
+            ],
+            "date_symbol_changed": "2007-02-23",
+            "pubmed_id": [
+                15779907,
+                21549344
+            ],
+            "location_sortable": "06p21.1"
+        },
+        {
+            "date_approved_reserved": "2005-11-15",
+            "vega_id": "OTTHUMG00000153515",
+            "locus_group": "protein-coding gene",
+            "status": "Approved",
+            "alias_symbol": [
+                "MGC2744"
+            ],
+            "_version_": 1556023384658149400,
+            "uuid": "5bc4d2f5-df8b-462b-8b8c-60400d3aaed5",
+            "refseq_accession": [
+                "NM_001261434"
+            ],
+            "locus_type": "gene with protein product",
+            "cosmic": "AARSD1",
+            "hgnc_id": "HGNC:28417",
+            "ensembl_gene_id": "ENSG00000266967",
+            "entrez_id": "80755",
+            "omim_id": [
+                613212
+            ],
+            "symbol": "AARSD1",
+            "location": "17q21.31",
+            "name": "alanyl-tRNA synthetase domain containing 1",
+            "date_modified": "2015-08-26",
+            "mgd_id": [
+                "MGI:1916934"
+            ],
+            "ucsc_id": "uc031raq.2",
+            "uniprot_ids": [
+                "Q9BTE6"
+            ],
+            "ccds_id": [
+                "CCDS11447",
+                "CCDS45691",
+                "CCDS58552"
+            ],
+            "ena": [
+                "BC004172"
+            ],
+            "location_sortable": "17q21.31"
+        },
+        {
+            "gene_family": [
+                "Acyl-CoA synthetase family"
+            ],
+            "date_approved_reserved": "2007-10-17",
+            "alias_name": [
+                "acyl-CoA synthetase family member 4"
+            ],
+            "vega_id": "OTTHUMG00000128841",
+            "locus_group": "protein-coding gene",
+            "status": "Approved",
+            "alias_symbol": [
+                "NRPS998",
+                "LYS2",
+                "ACSF4"
+            ],
+            "_version_": 1556023384658149400,
+            "uuid": "0f2a129b-9c41-47f6-b970-ebfe10d37da5",
+            "refseq_accession": [
+                "NM_181806"
+            ],
+            "locus_type": "gene with protein product",
+            "gene_family_id": [
+                40
+            ],
+            "cosmic": "AASDH",
+            "hgnc_id": "HGNC:23993",
+            "rgd_id": [
+                "RGD:1311135"
+            ],
+            "ensembl_gene_id": "ENSG00000157426",
+            "entrez_id": "132949",
+            "omim_id": [
+                614365
+            ],
+            "symbol": "AASDH",
+            "location": "4q12",
+            "name": "aminoadipate-semialdehyde dehydrogenase",
+            "date_modified": "2015-08-26",
+            "mgd_id": [
+                "MGI:2442517"
+            ],
+            "ucsc_id": "uc003hbn.5",
+            "enzyme_id": [
+                "1.2.1.31"
+            ],
+            "uniprot_ids": [
+                "Q4L235"
+            ],
+            "ccds_id": [
+                "CCDS3504",
+                "CCDS68705",
+                "CCDS68706",
+                "CCDS75126",
+                "CCDS75127"
+            ],
+            "ena": [
+                "AF516672"
+            ],
+            "pubmed_id": [
+                15865210,
+                12712191,
+                17762044
+            ],
+            "location_sortable": "04q12"
+        },
+        {
+            "date_approved_reserved": "2000-12-21",
+            "alias_name": [
+                "holo ACP synthase",
+                "holo-[acyl-carrier-protein] synthase"
+            ],
+            "vega_id": "OTTHUMG00000166253",
+            "locus_group": "protein-coding gene",
+            "status": "Approved",
+            "alias_symbol": [
+                "LYS5",
+                "CGI-80",
+                "AASD-PPT",
+                "ACPS"
+            ],
+            "_version_": 1556023384659198000,
+            "uuid": "f007e096-3c8b-4c1f-b81f-3ed00d16a31a",
+            "refseq_accession": [
+                "NM_015423"
+            ],
+            "locus_type": "gene with protein product",
+            "cosmic": "AASDHPPT",
+            "hgnc_id": "HGNC:14235",
+            "rgd_id": [
+                "RGD:1311360"
+            ],
+            "ensembl_gene_id": "ENSG00000149313",
+            "entrez_id": "60496",
+            "omim_id": [
+                607756
+            ],
+            "symbol": "AASDHPPT",
+            "location": "11q22.3",
+            "name": "aminoadipate-semialdehyde dehydrogenase-phosphopantetheinyl transferase",
+            "date_modified": "2016-10-05",
+            "mgd_id": [
+                "MGI:1914868"
+            ],
+            "ucsc_id": "uc001pjc.2",
+            "enzyme_id": [
+                "2.7.8.7"
+            ],
+            "uniprot_ids": [
+                "Q9NRN7"
+            ],
+            "ccds_id": [
+                "CCDS31664"
+            ],
+            "ena": [
+                "AF302110"
+            ],
+            "pubmed_id": [
+                12815048,
+                11286508,
+                18022563
+            ],
+            "location_sortable": "11q22.3"
+        },
+        {
+            "date_approved_reserved": "2002-01-09",
+            "vega_id": "OTTHUMG00000157058",
+            "locus_group": "protein-coding gene",
+            "status": "Approved",
+            "alias_symbol": [
+                "LORSDH",
+                "LKRSDH"
+            ],
+            "_version_": 1556023384659198000,
+            "uuid": "4ce7545d-dc9a-4a85-b12a-1a333036f6cd",
+            "refseq_accession": [
+                "NM_005763"
+            ],
+            "locus_type": "gene with protein product",
+            "cosmic": "AASS",
+            "hgnc_id": "HGNC:17366",
+            "rgd_id": [
+                "RGD:1310811"
+            ],
+            "ensembl_gene_id": "ENSG00000008311",
+            "entrez_id": "10157",
+            "omim_id": [
+                605113
+            ],
+            "symbol": "AASS",
+            "location": "7q31.32",
+            "name": "aminoadipate-semialdehyde synthase",
+            "date_modified": "2016-10-05",
+            "mgd_id": [
+                "MGI:1353573"
+            ],
+            "ucsc_id": "uc003vkb.4",
+            "uniprot_ids": [
+                "Q9UDR5"
+            ],
+            "orphanet": 123389,
+            "ccds_id": [
+                "CCDS5783"
+            ],
+            "ena": [
+                "AF229180"
+            ],
+            "pubmed_id": [
+                10775527
+            ],
+            "location_sortable": "07q31.32"
+        },
+        {
+            "date_approved_reserved": "2002-09-13",
+            "vega_id": "OTTHUMG00000188458",
+            "locus_group": "protein-coding gene",
+            "status": "Approved",
+            "alias_symbol": [
+                "DED",
+                "CHE-1",
+                "CHE1",
+                "BFR2"
+            ],
+            "_version_": 1556023384660246500,
+            "uuid": "a222c7f7-2009-4165-a4e1-8525a2532bd2",
+            "refseq_accession": [
+                "NM_012138"
+            ],
+            "locus_type": "gene with protein product",
+            "cosmic": "AATF",
+            "hgnc_id": "HGNC:19235",
+            "rgd_id": [
+                "RGD:620685"
+            ],
+            "ensembl_gene_id": "ENSG00000275700",
+            "entrez_id": "26574",
+            "omim_id": [
+                608463
+            ],
+            "symbol": "AATF",
+            "location": "17q12",
+            "name": "apoptosis antagonizing transcription factor",
+            "date_modified": "2015-01-29",
+            "mgd_id": [
+                "MGI:1929608"
+            ],
+            "ucsc_id": "uc002hni.3",
+            "uniprot_ids": [
+                "Q9NY61"
+            ],
+            "ccds_id": [
+                "CCDS32632"
+            ],
+            "ena": [
+                "AF083208"
+            ],
+            "pubmed_id": [
+                11027528,
+                10783144
+            ],
+            "location_sortable": "17q12"
+        },
+        {
+            "gene_family": [
+                "Receptor Tyrosine Kinases",
+                "Protein phosphatase 1 regulatory subunits"
+            ],
+            "date_approved_reserved": "1999-09-16",
+            "alias_name": [
+                "lemur tyrosine kinase 1",
+                "protein phosphatase 1, regulatory subunit 77"
+            ],
+            "vega_id": "OTTHUMG00000132717",
+            "locus_group": "protein-coding gene",
+            "status": "Approved",
+            "alias_symbol": [
+                "AATYK",
+                "KIAA0641",
+                "LMTK1",
+                "LMR1",
+                "AATYK1",
+                "PPP1R77"
+            ],
+            "_version_": 1556023384661295000,
+            "uuid": "f94a7c79-9f17-4f8e-a157-506b76b08c28",
+            "refseq_accession": [
+                "NM_004920"
+            ],
+            "locus_type": "gene with protein product",
+            "iuphar": "objectId:1922",
+            "gene_family_id": [
+                321,
+                694
+            ],
+            "cosmic": "AATK",
+            "hgnc_id": "HGNC:21",
+            "rgd_id": [
+                "RGD:1590980"
+            ],
+            "ensembl_gene_id": "ENSG00000181409",
+            "entrez_id": "9625",
+            "omim_id": [
+                605276
+            ],
+            "symbol": "AATK",
+            "date_name_changed": "2016-06-09",
+            "location": "17q25.3",
+            "name": "apoptosis associated tyrosine kinase",
+            "date_modified": "2016-06-29",
+            "mgd_id": [
+                "MGI:1197518"
+            ],
+            "ucsc_id": "uc010dia.4",
+            "uniprot_ids": [
+                "Q6ZMQ8"
+            ],
+            "ccds_id": [
+                "CCDS45807",
+                "CCDS58607"
+            ],
+            "ena": [
+                "AB014541"
+            ],
+            "pubmed_id": [
+                9734811,
+                10083745,
+                22573681
+            ],
+            "location_sortable": "17q25.3"
+        }
+    ]
+}
+}

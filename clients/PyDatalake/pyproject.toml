@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "pydatalake"
+version = "0.1.0"
+description = ""
+authors = ["dorranh <dorran.howell@tweag.io>"]
+
+[tool.poetry.dependencies]
+python = "^3.6.1"
+sqlalchemy = "^1.3.16"
+psycopg2-binary = "^2.8.5"
+PyYAML = "^5.3.1"
+requests = "^2.23.0"
+pandas = "^1.0.3"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

@@ -1,0 +1,21 @@
+version: '2'
+services:
+  datalake-server:
+    image: datalake-server
+    ports:
+        - "22089:22089"
+    depends_on:
+        - datalake-postgres
+    environment:
+        - PGHOST=datalake-postgres
+        - PGPORT=5432
+        - PGPASSWORD=dlserver
+        - PGUSER=dlserver
+        - PGSCHEMA=CmdlineTests
+        - DLSERVER_EXTRA_ARGS=--verbose
+  datalake-postgres:
+    image: postgres
+    environment:
+        - POSTGRES_USER=dlserver
+        - POSTGRES_PASSWORD=dlserver
+        - POSTGRES_DB=pfizer

@@ -1,0 +1,29 @@
+many-json-numbers.json (version 1)
+  URL         s3://my-bucket/many-json-numbers.json
+  description many-json-numbers.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t1 (with view many_json_numbers_json_v1)
+  typed       (not available)
+  row count   1000000
+  columns
+    	Type	Name
+    c1	JSON (number)	data (data)
+
+simple file.csv (version 1)
+  URL         s3://my-bucket/%2Fsimple%20file.csv
+  description simple file.csv
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t2 (with view simple_file_csv_v1)
+  typed       typed2 (with view simple_file_csv_v1_typed)
+  row count   1
+  columns
+          Type    Name
+    c1    BOOLEAN Foo (Foo)

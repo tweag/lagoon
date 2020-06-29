@@ -1,0 +1,162 @@
+name:                datalake-backend
+version:             0.1.0
+license:             AllRightsReserved
+author:              Edsko de Vries
+maintainer:          edsko@well-typed.com
+copyright:           (c) 2016 Pfizer, Inc
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Pfizer.Datalake.Ingest
+                       Pfizer.Datalake.Download
+                       Pfizer.Datalake.Auth
+                       Pfizer.Datalake.DB
+                       Pfizer.Datalake.DB.ColumnSpec
+                       Pfizer.Datalake.DB.DumpInfo
+                       Pfizer.Datalake.DB.IfNotFound
+                       Pfizer.Datalake.DB.Indices
+                       Pfizer.Datalake.DB.InitReset
+                       Pfizer.Datalake.DB.Meta
+                       Pfizer.Datalake.DB.Migration
+                       Pfizer.Datalake.DB.Orphans
+                       Pfizer.Datalake.DB.Passwords
+                       Pfizer.Datalake.DB.Schema
+                       Pfizer.Datalake.DB.Security
+                       Pfizer.Datalake.DB.SensibleNames
+                       Pfizer.Datalake.DB.SourceInfo
+                       Pfizer.Datalake.DB.SourceNames
+                       Pfizer.Datalake.DB.Sources
+                       Pfizer.Datalake.DB.Tags
+                       Pfizer.Datalake.DB.Typed
+                       Pfizer.Datalake.DB.UserQuery
+                       Pfizer.Datalake.DB.Users
+                       Pfizer.Datalake.FriendlyException.Orphans
+                       Pfizer.Datalake.Ingest.DataFormat
+                       Pfizer.Datalake.Ingest.JSON.TypeInference
+                       Pfizer.Datalake.Ingest.Progress
+                       Pfizer.Datalake.Ingest.Stream
+                       Pfizer.Datalake.Ingest.Tabular.InferFieldType
+                       Pfizer.Datalake.Ingest.Tabular.TypeInference
+                       Pfizer.Datalake.Ingest.Tabular.UntypedRecord
+                       Pfizer.Datalake.Ingest.TypeUniverse
+                       Pfizer.Datalake.ManageDb
+                       Pfizer.Datalake.Util
+                       Pfizer.Datalake.Util.Conduit
+                       Pfizer.Datalake.Util.Exception
+                       Pfizer.Datalake.Util.JSON
+                       Pfizer.Datalake.Util.JSON.Context
+                       Pfizer.Datalake.Util.JSON.Errors
+                       Pfizer.Datalake.Util.JSON.Lexer
+                       Pfizer.Datalake.Util.JSON.Stream
+                       Pfizer.Datalake.Util.JSON.Token
+                       Pfizer.Datalake.Util.JSON.TopLevel
+                       Pfizer.Datalake.Util.Logging
+                       Pfizer.Datalake.Util.PostgreSQL
+                       Pfizer.Datalake.Util.PostgreSQL.CopyFrom
+                       Pfizer.Datalake.Util.PostgreSQL.CopyTo
+                       Pfizer.Datalake.Util.PostgreSQL.Exception
+                       Pfizer.Datalake.Util.PostgreSQL.HList
+                       Pfizer.Datalake.Util.PostgreSQL.Keywords
+                       Pfizer.Datalake.Util.PostgreSQL.PartialQuery
+                       Pfizer.Datalake.Util.PostgreSQL.Queries
+                       Pfizer.Datalake.Util.PostgreSQL.QueryPlan
+                       Pfizer.Datalake.Util.PostgreSQL.Quoted
+                       Pfizer.Datalake.Util.PostgreSQL.Reserved
+                       Pfizer.Datalake.Util.PostgreSQL.Schema
+                       Pfizer.Datalake.Util.PostgreSQL.Schema.SqlEntity
+                       Pfizer.Datalake.Util.PostgreSQL.Schema.SqlFun
+                       Pfizer.Datalake.Util.PostgreSQL.Schema.SqlIndex
+                       Pfizer.Datalake.Util.PostgreSQL.Schema.SqlTable
+                       Pfizer.Datalake.Util.PostgreSQL.Schema.SqlTrigger
+                       Pfizer.Datalake.Util.PostgreSQL.Schema.SqlType
+                       Pfizer.Datalake.Util.PostgreSQL.Settings
+                       Pfizer.Datalake.Util.PostgreSQL.Transaction
+                       Pfizer.Datalake.Util.PostgreSQL.TsQuery
+                       Pfizer.Datalake.Util.StrictList
+                       Pfizer.Datalake.Verified
+  build-depends:       base
+                     , aeson
+                     , aws
+                     , array
+                     , bcrypt
+                     , bytestring
+                     , conduit
+                     , conduit-combinators
+                     , containers
+                     , data-default
+                     , directory
+                     , exceptions
+                     , filepath
+                     , hashable
+                     , http-client
+                     , http-conduit
+                     , http-types
+                     , unliftio-core
+                     , mtl
+                     , network-uri
+                     , optparse-applicative
+                     , parsec
+                     , path
+                     , postgresql-simple
+                     , pretty
+                     , pretty-show
+                     , resourcet
+                     , temporary
+                     , text
+                     , time
+                     , transformers
+                     , transformers-base
+                     , unix-compat
+                     , unordered-containers
+                     , uri-encode
+                     , utf8-string
+                     , vector
+                     , yaml
+                     , zip
+                     , csv-conduit
+                       -- Use bundled version:
+                     , datalake-interface
+  build-tools:         alex
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  default-extensions:  BangPatterns
+                       ConstraintKinds
+                       DefaultSignatures
+                       DeriveGeneric
+                       FlexibleContexts
+                       FlexibleInstances
+                       FunctionalDependencies
+                       GADTs
+                       ImplicitParams
+                       InstanceSigs
+                       KindSignatures
+                       LambdaCase
+                       MultiParamTypeClasses
+                       MultiWayIf
+                       NamedFieldPuns
+                       NoMonomorphismRestriction
+                       RankNTypes
+                       RecordWildCards
+                       ScopedTypeVariables
+                       StandaloneDeriving
+                       TupleSections
+                       TypeFamilies
+                       TypeOperators
+                       ViewPatterns
+  other-extensions:    CPP
+                       DeriveFunctor
+                       GeneralizedNewtypeDeriving
+                       OverloadedStrings
+                       UndecidableInstances
+  ghc-options:         -Wall
+
+test-suite conduit-compact-test
+  main-is: ./conduit-compact-test/Main.hs
+  type: exitcode-stdio-1.0
+  build-depends:
+            datalake-backend
+          , base
+          , hspec
+          , conduit
+          , QuickCheck

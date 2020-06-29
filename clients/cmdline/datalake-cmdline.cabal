@@ -1,0 +1,56 @@
+name:                datalake-cmdline
+version:             0.4.0.0
+synopsis:            Command line interface to the Datalake server
+license:             AllRightsReserved
+author:              Edsko de Vries
+maintainer:          edsko@well-typed.com
+copyright:           (c) 2016 Pfizer, Inc
+build-type:          Simple
+cabal-version:       >=1.10
+
+executable datalake
+  main-is:             Main.hs
+  other-modules:       Pfizer.Datalake.Client.Cmdline
+                       Paths_datalake_cmdline
+  build-depends:       base
+                     , connection
+                     , directory
+                     , filepath
+                     , http-client
+                     , http-client-tls
+                     , http-types
+                     , mtl
+                     , network-uri
+                     , optparse-applicative
+                     , pretty
+                     , pretty-show
+                     , resourcet
+                     , servant
+                     , servant-client
+                     , time
+                     , uri-encode
+                     , utf8-string
+                       -- bundled versions
+                     , datalake-interface
+                     , datalake-frontend
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  default-extensions:  BangPatterns
+                       DataKinds
+                       DefaultSignatures
+                       DeriveGeneric
+                       FlexibleContexts
+                       FlexibleInstances
+                       FunctionalDependencies
+                       InstanceSigs
+                       MultiParamTypeClasses
+                       NoMonomorphismRestriction
+                       RankNTypes
+                       RecordWildCards
+                       ScopedTypeVariables
+                       TypeFamilies
+                       TypeOperators
+  other-extensions:    OverloadedStrings
+                       UndecidableInstances
+  ghc-options:         -Wall
+                       -rtsopts
