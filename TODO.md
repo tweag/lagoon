@@ -20,8 +20,9 @@ Cleanup TODO List:
     [ ] src/frontend/README.md
     [ ] src/server/README.md
     [ ] nix/
+* [ ] Move server to /app
 * [X] DockerHub Org
-* [ ] License File
+* [X] License File
 * [ ] Move Docker images to repo
 * [ ] Updated CI Pipeline
     [ ] Select preferred CI platform (GitHub Actions?)
