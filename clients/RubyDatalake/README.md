@@ -1,4 +1,6 @@
-# Datalake Ruby Client
+# RubyDatalake
+
+Ruby client for datalake.
 
 ## Prerequisites for 0.02
 

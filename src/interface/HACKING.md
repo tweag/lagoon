@@ -4,19 +4,6 @@ The `datalake-interface` library defines the API between the Datalake backend
 functionality (server and ingest tools) on the one hand and the web frontend
 on the other.
 
-In general of course the more functionality we can share between the frontend
-and the backend the better. Right now the `datalake-interface` library is
-rather small however since the Datalake web frontend is a relatively recent
-addition to the Datalake project and we only recently started splitting out
-functionality of the `datalake-backend` library into the `datalake-interface`
-one.
-
-The reason for not sharing the entire `datalake-backend` library wholesale
-between frontend and backend is library dependencies: we don't want to bloat the
-frontend (written in Haskell and then compiled into JavaScript) too much with
-unnecessary dependencies, and some dependencies simply are not available in
-JavaScript (most notably `postgresql-simple`).
-
 ## Getting Started
 
 The `datalake-interface` library right now is quite a simple library, exporting

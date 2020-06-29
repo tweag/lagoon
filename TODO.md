@@ -1,3 +1,5 @@
+Note: this will be removed prior to release
+
 Cleanup TODO List:
 
 * [X] General cleanup/reorg
@@ -8,22 +10,24 @@ Cleanup TODO List:
         * "runsecuritytests" passes
         * "runcompacttests" passes
 * [ ] Documentation cleanup/simplification
-    [ ] README.md
-    [ ] clients/README.md
+
+    [X] README.md
+    [X] clients/README.md
     [ ] clients/python/README.md
     [ ] clients/R/README.md
     [ ] clients/ruby/README.md
-    [ ] clients/cmdline/README.md
-    [ ] src/README.md
-    [ ] src/backend/README.md
-    [ ] src/interface/README.md
-    [ ] src/frontend/README.md
-    [ ] src/server/README.md
-    [ ] nix/
-* [ ] Move server to /app
+    [X] clients/cmdline/README.md
+    [X] src/README.md
+    [X] src/backend/README.md
+    [X] src/interface/README.md
+    [X] src/frontend/README.md
+    [X] src/server/README.md
+    [X] nix/
+* [X] Move server to /app
 * [X] DockerHub Org
 * [X] License File
-* [ ] Move Docker images to repo
+* [X] Move Docker image(s) to repo
+* [ ] Update Docker image entrypoint
 * [ ] Updated CI Pipeline
     [ ] Select preferred CI platform (GitHub Actions?)
     [ ] Translate old CI scripts
@@ -36,9 +40,6 @@ Also:
 * [ ] PyDatalake -> poetry2nix packaging
 
 Questions:
-* Q: Do we need to still use appveyor CI? Can we just run tests on linux?
-    A: No
-* Q: GitHub Actions vs Circle CI? Probably GitHub
 * Q: Can we delete datalake/clients/cmdline/test-cases/docker-compose.yaml?
 * Q: Publish python, R, ruby packages to pypi, cran, etc.?
 

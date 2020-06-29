@@ -1,4 +1,6 @@
-# Datalake Python Client
+# PyDatalake
+
+Experimental python client for datalake.
 
 ## Usage
 

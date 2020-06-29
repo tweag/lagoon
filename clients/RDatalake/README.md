@@ -1,5 +1,6 @@
-This package implements functions to call the [ingest][ingest] tool from
-`R` and functions to retrieve metadata from the datalake. It also
+# RDatalake
+
+This package implements functions to ingest and retrieve data from datalake. It also
 implements a DBI driver for the Datalake server and a [dplyr][dplyr]
 backend which employs the DBI driver.
 
