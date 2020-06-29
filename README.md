@@ -37,8 +37,17 @@ To build the datalake server, simply install nix then run:
 
 
 Available Nix attributes:
+
+Applications
   * datalake-server
   * datalake-cmdline
-  * datalake-docker
   * pydatalake
   * rdatalake
+
+Docker Images:
+  * datalakeDocker.datalake-server
+
+Integration Tests
+  * runtests
+  * runcompacttests
+  * runsecuritytests
