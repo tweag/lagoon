@@ -1,0 +1,48 @@
+tags
+dist/
+dist-newstyle/
+bin/
+.stack-work
+.*.swp
+.DS_Store
+dbinfo.actual
+datalake-linux-x86_64
+datalake-linux-x86_64.tar.gz
+.Rhistory
+*.zip
+ingest/test-cases/generated
+cmdline/test-cases/generated
+.cabal-sandbox/
+cabal.sandbox.config
+cabal.config
+terraform.tfstate.backup
+temp/
+
+# CI / script automation
+ci/datalake-linux-x86_64/
+scripts/webapp_build
+
+# webapp artifacts
+.sass-cache
+*.css.map
+webapp/*.css*
+_build/
+
+# Text editor artifacts
+.#.*
+*.m~
+.idea
+
+# Python artifacts
+*.egg-info
+__pycache__
+
+# No datalake credentials
+datalake.yaml
+
+# No nix result files
+result*
+
+# No bundix files
+RubyDatalake/.bundle
+RubyDatalake/vendor
