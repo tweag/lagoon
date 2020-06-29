@@ -1,5 +1,7 @@
 # RDatalake
 
+R client for datalake.
+
 This package implements functions to ingest and retrieve data from datalake. It also
 implements a DBI driver for the Datalake server and a [dplyr][dplyr]
 backend which employs the DBI driver.
