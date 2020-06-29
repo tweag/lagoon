@@ -1,58 +1,44 @@
-# Pfizer datalake
+# Datalake
 
-This pilot creates processes to accelerate consumption and deployment data
-sources and services. It implements processes with lightweight interfaces to
-automatically ingest, build services, and retrieve data for far less
-time and effort compared to currently available methods.
+Datalake is an application for centralizing structured and semi-structured data in an easy-to-query format. Written in Haskell 
+and built on top of Postgres, Datalake supports a variety of features including automatic schema generation, SQL queries, 
+cross-dataset querying, and dataset versioning. Datalake includes a REST API, allowing it to be easily integrated with a 
+wide range of client applications. 
 
-These capabilities use REST services that can be consumed by any modern
-analytics technology stack (R, Python, Javascript, Ruby, Java, etc.).
+## Components
 
-Benefits of this workflow include:
+### Server and CLI
 
-* New analyses and web apps can incorporate previously-obtained contextual
-information with minimal effort.
+The core components of datalake are its [server](server) and [command line client](clients/cmdline) applications. Follow the getting started guide at [TODO]() to 
+configure and start running a datalake instance.
 
-* Multiple projects benefit from incorporating a deeper and richer degree of
-  biological context drawn from previous efforts.
 
-* Automating collection of shared metadata enables a shared community data
-  ecosystem.
+### Clients
 
-For additional details, see the [download page][downloadpage] and [pilot
-document][pilotdoc].
+For convenience, Datalake also includes client libraries for interacting with its REST API in a variety of programming languages:
 
-Pfizer team contact: [Austin Huang](mailto: austin.huang@pfizer.com)
+  * [Python (PyDatalake)](clients/PyDatalake)
+  * [Ruby (RubyDatalake)](clients/RubyDatalake)
+  * [R (RDatalake)](clients/RDatalake)
 
-## What's included
+## Installation
 
-The project includes the following components -
+### Docker
 
-### For Analysts:
+Pre-built docker images containing the datalake server and CLI may be found on [DockerHub](TODO). Simply pull one of the images there and follow the [configuration guide](TODO) to get started.
 
-* **[RDatalake](./RDatalake/):** library for importing data and writing
-  queries from from R, using familiar domain specific languages such as
-  [`dplyr`][dplyr]. This is an installable R package.
-* **[MatDatalake](./MatDatalake/):** Experimental Matlab library for
-  importing data and writing queries from Matlab.
-* **[PyDatalake](./PyDatalake/):** Experimental Python library for
-  importing and manipulating data, leveraging
-  [pandas](http://pandas.pydata.org/) and
-  [SQLAlchemy](http://www.sqlalchemy.org/) capabilities.
-* **[RubyDatalake](./RubyDatalake/):** Experimental Ruby library for
-  importing and manipulating data, leveraging
-  [daru](https://github.com/v0dro/daru) and
-  [sequel](http://sequel.jeremyevans.net/) capabilities.
+### From source
 
-### For Administrators:
+Datalake is packaged with [nix](https://nixos.org/download.html), and all build configurations can be found in the [nix/](nix) directory.
 
-* **[datalake-server](./server/):** executable serving ingested data in a JSON
-  format.
-* **[datalake-webapp](./webapp/):** webapp for browsing datasets.
+To build the datalake server, simply install nix then run:
 
-For details regarding code, installation and setup, see [developer documentation here](HACKING.md).
+    nix-build -A datalake-server
 
-[downloadpage]: http://cscoe.pfizer.com/static/austin_huang/datalake/
-[dplyr]: https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html
-[pilotdoc]:http://cscoe.pfizer.com/austin_huang/ds_proposal_2016/austin_huang_pilot.pdf
 
+Available Nix attributes:
+  * datalake-server
+  * datalake-cmdline
+  * datalake-docker
+  * pydatalake
+  * rdatalake
