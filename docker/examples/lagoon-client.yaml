@@ -1,0 +1,4 @@
+lagoonserver_host: localhost
+lagoonserver_port: 1234
+lagoonserver_secure: False 
+lagoonserver_verify_cert: False

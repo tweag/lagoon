@@ -1,0 +1,7 @@
+bool,int,bigint,real,text
+0,0,0,0,t
+1,1,1,1,f
+t,2,2,2,0
+f,3,3,3,1
+true,4,4,3.5,a
+false,5,1123456789,3.6,b

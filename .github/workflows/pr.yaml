@@ -1,0 +1,29 @@
+name: "master"
+on:
+  pull_request:
+    branches: [ master ]
+    ignore-paths:
+      - 'docs/**'
+      - 'examples/**'
+      - '**.md'
+      - 'LICENSE'
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2.3.1
+    - id: vars
+      shell: bash
+      run: |
+        echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+        
+    - uses: cachix/install-nix-action@v10
+    
+    - name: nix-build and unit test lagoon components
+      run: nix-build -A lagoon-server -A lagoon-cmdline -A rubylagoon -A pylagoon -A rlagoon
+      
+    - name: Build docker image tarballs
+      run: |
+        nix-build -A lagoonDocker.server -o "lagoon-server-${{ steps.vars.outputs.sha_short }}.tar.gz"
+        nix-build -A lagoonDocker.client -o "lagoon-client-${{ steps.vars.outputs.sha_short }}.tar.gz"

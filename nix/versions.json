@@ -1,0 +1,37 @@
+{
+  "nixpkgs": {
+    "owner": "NixOS",
+    "repo": "nixpkgs-channels",
+    "branch": "nixos-18.03",
+    "rev": "e42c07d78a1fefc2d91f11f00e938253b3618a3b",
+    "sha256": "1cipg3846bw9mmxlvrrwxcrjq1yb49qcnkdssbz5i7ynqdxki1pd"
+  },
+  "reflex-dom": {
+    "owner": "reflex-frp",
+    "repo": "reflex-dom",
+    "branch": "develop",
+    "rev": "4a65735dab7cc23962621a536fef4aaf983b3881",
+    "sha256": "1lygh0dwdgp7jc3zv0p6h1al2i01dhjwls7vifyzc7nn6ryl2znc"
+  },
+  "reflex-dom-contrib": {
+    "owner": "reflex-frp",
+    "repo": "reflex-dom-contrib",
+    "branch": "master",
+    "rev": "d75fcd5f67cc23f2aa46765f33aa36d78033d9f9",
+    "sha256": "1nqplvr6qvdpih80wnxy46acx8nqpdfjvn8kvsq6vxnsp5gqp8rx"
+  },
+  "reflex": {
+    "owner": "reflex-frp",
+    "repo": "reflex",
+    "branch": "develop",
+    "rev": "39d9392b191ec85052eb8839f6c9f207f9e21885",
+    "sha256": "07rzrapnalzvl24nc9vgbzah8qpwqkd2v90ijzchwhlgk9y82lfb"
+  },
+  "jsaddle": {
+    "owner": "ghcjs",
+    "repo": "jsaddle",
+    "branch": "master",
+    "rev": "34fe7d61b3f387b81aa748294ac8d993243f53b4",
+    "sha256": "0qdh5qdk23vcp1yp910zgw2hs4zpbx9ig25xgaax0iwj2m1ifh5x"
+  }
+}

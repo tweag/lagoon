@@ -1,0 +1,1384 @@
+001_simple.csv (version 1)
+  URL         (local)
+  description 001_simple.csv
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t6 (with view _001_simple_csv_v1)
+  typed       typed6 (with view _001_simple_csv_v1_typed)
+  row count   1
+  columns
+    	Type	Name
+    c1	BOOLEAN	Foo (Foo)
+ 
+002_quotes1.csv (version 1)
+  URL         (local)
+  description 002_quotes1.csv
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t7 (with view _002_quotes1_csv_v1)
+  typed       typed7 (with view _002_quotes1_csv_v1_typed)
+  row count   2
+  columns
+    	Type	Name
+    c1	TEXT	foo (foo)
+    c2	TEXT	bar (bar)
+ 
+003_quotes2.csv (version 1)
+  URL         (local)
+  description 003_quotes2.csv
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t8 (with view _003_quotes2_csv_v1)
+  typed       typed8 (with view _003_quotes2_csv_v1_typed)
+  row count   2
+  columns
+    	Type	Name
+    c1	TEXT	foo (foo)
+    c2	TEXT	bar (bar)
+ 
+004_quotes3.csv (version 1)
+  URL         (local)
+  description 004_quotes3.csv
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t9 (with view _004_quotes3_csv_v1)
+  typed       typed9 (with view _004_quotes3_csv_v1_typed)
+  row count   1
+  columns
+    	Type	Name
+    c1	BOOLEAN	foo (foo)
+    c2	INTEGER	bar (bar)
+ 
+005_quotes4.csv (version 1)
+  URL         (local)
+  description 005_quotes4.csv
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t10 (with view _005_quotes4_csv_v1)
+  typed       typed10 (with view _005_quotes4_csv_v1_typed)
+  row count   4
+  columns
+    	Type	Name
+    c1	TEXT	foo (foo)
+    c2	TEXT	bar (bar)
+ 
+006_vary_num_rows.csv (version 1)
+  URL         (local)
+  description 006_vary_num_rows.csv
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t11 (with view _006_vary_num_rows_csv_v1)
+  typed       typed11 (with view _006_vary_num_rows_csv_v1_typed)
+  row count   6
+  columns
+    	Type	Name
+    c1	TEXT	a (a)
+    c2	TEXT	(no header) (c2)
+    c3	TEXT	(no header) (c3)
+    c4	TEXT	(no header) (c4)
+    c5	TEXT	(no header) (c5)
+ 
+007_strange_names.csv (version 1)
+  URL         (local)
+  description 007_strange_names.csv
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t12 (with view _007_strange_names_csv_v1)
+  typed       typed12 (with view _007_strange_names_csv_v1_typed)
+  row count   2
+  columns
+    	Type	Name
+    c1	INTEGER	name with spaces (name_with_spaces)
+    c2	INTEGER	keywords (keywords)
+    c3	INTEGER	create (create)
+    c4	INTEGER	table (table)
+    c5	INTEGER	some symbols > and $ (some_symbols___and__)
+    c6	INTEGER	some unicode 中文 (some_unicode_中文)
+    c7	INTEGER	backwards קְרַב מַגָּע (backwards_ק_ר_ב_מ_ג__ע)
+ 
+008_strange_names2.csv (version 1)
+  URL         (local)
+  description 008_strange_names2.csv
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t13 (with view _008_strange_names2_csv_v1)
+  typed       typed13 (with view _008_strange_names2_csv_v1_typed)
+  row count   2
+  columns
+    	Type	Name
+    c1	INTEGER	longA123456789B123456789C123456789D123456789EB123456789F123456789-A (longA123456789B123456789C123456789D123456789EB123456789F1234567)
+    c2	INTEGER	longA123456789B123456789C123456789D123456789EB123456789F123456789-B (longA123456789B123456789C123456789D123456789EB123456789F12345_1)
+ 
+009_dups.csv (version 1)
+  URL         (local)
+  description 009_dups.csv
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t14 (with view _009_dups_csv_v1)
+  typed       typed14 (with view _009_dups_csv_v1_typed)
+  row count   1
+  columns
+    	Type	Name
+    c1	BOOLEAN	foo (foo)
+    c2	INTEGER	foo (foo_1)
+    c3	INTEGER	bar (bar)
+    c4	INTEGER	baz (baz)
+    c5	INTEGER	bar (bar_1)
+    c6	INTEGER	baz (baz_1)
+ 
+010_dups2.csv (version 1)
+  URL         (local)
+  description 010_dups2.csv
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t15 (with view _010_dups2_csv_v1)
+  typed       typed15 (with view _010_dups2_csv_v1_typed)
+  row count   1
+  columns
+    	Type	Name
+    c1	BOOLEAN	foo (foo)
+    c2	INTEGER	Foo (Foo_1)
+    c3	INTEGER	bar (bar)
+    c4	INTEGER	baz (baz)
+    c5	INTEGER	BAR (BAR_1)
+    c6	INTEGER	baZ (baZ_1)
+ 
+011_type-inference.csv (version 1)
+  URL         (local)
+  description 011_type-inference.csv
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t16 (with view _011_type_inference_csv_v1)
+  typed       typed16 (with view _011_type_inference_csv_v1_typed)
+  row count   6
+  columns
+    	Type	Name
+    c1	BOOLEAN	bool (bool)
+    c2	INTEGER	int (int)
+    c3	BIGINT	bigint (bigint)
+    c4	DOUBLE PRECISION	real (real)
+    c5	TEXT	text (text)
+ 
+012_scientific.csv (version 1)
+  URL         (local)
+  description 012_scientific.csv
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t17 (with view _012_scientific_csv_v1)
+  typed       typed17 (with view _012_scientific_csv_v1_typed)
+  row count   66
+  columns
+    	Type	Name
+    c1	DOUBLE PRECISION	scientific (scientific)
+ 
+013_outofrange.csv (version 1)
+  URL         (local)
+  description 013_outofrange.csv
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t18 (with view _013_outofrange_csv_v1)
+  typed       typed18 (with view _013_outofrange_csv_v1_typed)
+  row count   18
+  columns
+    	Type	Name
+    c1	TEXT	scientific (scientific)
+ 
+014_ingest-01.json (version 1)
+  URL         (local)
+  description 014_ingest-01.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t19 (with view _014_ingest_01_json_v1)
+  typed       (not available)
+  row count   3
+  columns
+    	Type	Name
+    c1	JSON ({"name":string})	data (data)
+ 
+015_ingest-02.json (version 1)
+  URL         (local)
+  description 015_ingest-02.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t20 (with view _015_ingest_02_json_v1)
+  typed       (not available)
+  row count   3
+  columns
+    	Type	Name
+    c1	JSON ({"name":string})	data (data)
+ 
+016_ingest-03.json (version 1)
+  URL         (local)
+  description 016_ingest-03.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t21 (with view _016_ingest_03_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([{"name":string}])	data (data)
+ 
+017_ingest-04.json (version 1)
+  URL         (local)
+  description 017_ingest-04.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t22 (with view _017_ingest_04_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([number])	data (data)
+ 
+018_ingest-05a.json (version 1)
+  URL         (local)
+  description 018_ingest-05a.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t23 (with view _018_ingest_05a_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([string])	data (data)
+ 
+019_ingest-05b.json (version 1)
+  URL         (local)
+  description 019_ingest-05b.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t24 (with view _019_ingest_05b_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([string])	data (data)
+ 
+020_ingest-05c.json (version 1)
+  URL         (local)
+  description 020_ingest-05c.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t25 (with view _020_ingest_05c_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([nullable string])	data (data)
+ 
+021_ingest-06.json (version 1)
+  URL         (local)
+  description 021_ingest-06.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t26 (with view _021_ingest_06_json_v1)
+  typed       (not available)
+  row count   2
+  columns
+    	Type	Name
+    c1	JSON ({"id":number,
+              "name":{"first":string, "last":string}})	data (data)
+ 
+022_ingest-07.json (version 1)
+  URL         (local)
+  description 022_ingest-07.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t27 (with view _022_ingest_07_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ({"strange key":number})	data (data)
+ 
+023_invalid-01.json (version 1)
+  URL         (local)
+  description 023_invalid-01.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t28 (with view _023_invalid_01_json_v1)
+  typed       (not available)
+  row count   0
+  columns
+    	Type	Name
+    c1	JSON (number)	data (data)
+ 
+024_parse-arr-01.json (version 1)
+  URL         (local)
+  description 024_parse-arr-01.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t29 (with view _024_parse_arr_01_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([unknown])	data (data)
+ 
+025_parse-arr-02.json (version 1)
+  URL         (local)
+  description 025_parse-arr-02.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t30 (with view _025_parse_arr_02_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([string])	data (data)
+ 
+026_parse-arr-03.json (version 1)
+  URL         (local)
+  description 026_parse-arr-03.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t31 (with view _026_parse_arr_03_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([mixed])	data (data)
+ 
+027_parse-num-01.json (version 1)
+  URL         (local)
+  description 027_parse-num-01.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t32 (with view _027_parse_num_01_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON (number)	data (data)
+ 
+028_parse-num-02.json (version 1)
+  URL         (local)
+  description 028_parse-num-02.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t33 (with view _028_parse_num_02_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON (number)	data (data)
+ 
+029_parse-num-03.json (version 1)
+  URL         (local)
+  description 029_parse-num-03.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t34 (with view _029_parse_num_03_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON (number)	data (data)
+ 
+030_parse-num-04.json (version 1)
+  URL         (local)
+  description 030_parse-num-04.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t35 (with view _030_parse_num_04_json_v1)
+  typed       (not available)
+  row count   5
+  columns
+    	Type	Name
+    c1	JSON (number)	data (data)
+ 
+031_parse-obj-01.json (version 1)
+  URL         (local)
+  description 031_parse-obj-01.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t36 (with view _031_parse_obj_01_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ({})	data (data)
+ 
+032_parse-obj-02.json (version 1)
+  URL         (local)
+  description 032_parse-obj-02.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t37 (with view _032_parse_obj_02_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ({"id":string})	data (data)
+ 
+033_parse-str-01.json (version 1)
+  URL         (local)
+  description 033_parse-str-01.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t38 (with view _033_parse_str_01_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON (string)	data (data)
+ 
+034_parse-str-02.json (version 1)
+  URL         (local)
+  description 034_parse-str-02.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t39 (with view _034_parse_str_02_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON (string)	data (data)
+ 
+035_parse-str-03.json (version 1)
+  URL         (local)
+  description 035_parse-str-03.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t40 (with view _035_parse_str_03_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON (string)	data (data)
+ 
+036_parse-ws-01.json (version 1)
+  URL         (local)
+  description 036_parse-ws-01.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t41 (with view _036_parse_ws_01_json_v1)
+  typed       (not available)
+  row count   2
+  columns
+    	Type	Name
+    c1	JSON (bool)	data (data)
+ 
+037_parse-ws-02.json (version 1)
+  URL         (local)
+  description 037_parse-ws-02.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t42 (with view _037_parse_ws_02_json_v1)
+  typed       (not available)
+  row count   2
+  columns
+    	Type	Name
+    c1	JSON (bool)	data (data)
+ 
+038_parse-ws-03.json (version 1)
+  URL         (local)
+  description 038_parse-ws-03.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t43 (with view _038_parse_ws_03_json_v1)
+  typed       (not available)
+  row count   2
+  columns
+    	Type	Name
+    c1	JSON (number)	data (data)
+ 
+039_parse-ws-04.json (version 1)
+  URL         (local)
+  description 039_parse-ws-04.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t44 (with view _039_parse_ws_04_json_v1)
+  typed       (not available)
+  row count   2
+  columns
+    	Type	Name
+    c1	JSON (number)	data (data)
+ 
+040_typ-arr-00.json (version 1)
+  URL         (local)
+  description 040_typ-arr-00.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t45 (with view _040_typ_arr_00_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([unknown])	data (data)
+ 
+041_typ-arr-01a.json (version 1)
+  URL         (local)
+  description 041_typ-arr-01a.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t46 (with view _041_typ_arr_01a_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([number])	data (data)
+ 
+042_typ-arr-01b.json (version 1)
+  URL         (local)
+  description 042_typ-arr-01b.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t47 (with view _042_typ_arr_01b_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([number])	data (data)
+ 
+043_typ-arr-02.json (version 1)
+  URL         (local)
+  description 043_typ-arr-02.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t48 (with view _043_typ_arr_02_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([string])	data (data)
+ 
+044_typ-arr-03.json (version 1)
+  URL         (local)
+  description 044_typ-arr-03.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t49 (with view _044_typ_arr_03_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([bool])	data (data)
+ 
+045_typ-arr-04.json (version 1)
+  URL         (local)
+  description 045_typ-arr-04.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t50 (with view _045_typ_arr_04_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([nullable unknown])	data (data)
+ 
+046_typ-arr-05.json (version 1)
+  URL         (local)
+  description 046_typ-arr-05.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t51 (with view _046_typ_arr_05_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([nullable number])	data (data)
+ 
+047_typ-arr-06.json (version 1)
+  URL         (local)
+  description 047_typ-arr-06.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t52 (with view _047_typ_arr_06_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([mixed])	data (data)
+ 
+048_typ-arr-07.json (version 1)
+  URL         (local)
+  description 048_typ-arr-07.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t53 (with view _048_typ_arr_07_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([[number]])	data (data)
+ 
+049_typ-arr-08.json (version 1)
+  URL         (local)
+  description 049_typ-arr-08.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t54 (with view _049_typ_arr_08_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([[nullable number]])	data (data)
+ 
+050_typ-arr-09.json (version 1)
+  URL         (local)
+  description 050_typ-arr-09.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t55 (with view _050_typ_arr_09_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([nullable [number]])	data (data)
+ 
+051_typ-arr-10.json (version 1)
+  URL         (local)
+  description 051_typ-arr-10.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t56 (with view _051_typ_arr_10_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([nullable [nullable number]])	data (data)
+ 
+052_typ-arr-11.json (version 1)
+  URL         (local)
+  description 052_typ-arr-11.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t57 (with view _052_typ_arr_11_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([[mixed]])	data (data)
+ 
+053_typ-arr-12.json (version 1)
+  URL         (local)
+  description 053_typ-arr-12.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t58 (with view _053_typ_arr_12_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([mixed])	data (data)
+ 
+054_typ-arr-13a.json (version 1)
+  URL         (local)
+  description 054_typ-arr-13a.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t59 (with view _054_typ_arr_13a_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([mixed])	data (data)
+ 
+055_typ-arr-13b.json (version 1)
+  URL         (local)
+  description 055_typ-arr-13b.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t60 (with view _055_typ_arr_13b_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([mixed])	data (data)
+ 
+056_typ-arr-14.json (version 1)
+  URL         (local)
+  description 056_typ-arr-14.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t61 (with view _056_typ_arr_14_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([[mixed]])	data (data)
+ 
+057_typ-arr-15.json (version 1)
+  URL         (local)
+  description 057_typ-arr-15.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t62 (with view _057_typ_arr_15_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([mixed])	data (data)
+ 
+058_typ-multiple-01.json (version 1)
+  URL         (local)
+  description 058_typ-multiple-01.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t63 (with view _058_typ_multiple_01_json_v1)
+  typed       (not available)
+  row count   2
+  columns
+    	Type	Name
+    c1	JSON ({"id":number, "name":optional string})	data (data)
+ 
+059_typ-obj-00.json (version 1)
+  URL         (local)
+  description 059_typ-obj-00.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t64 (with view _059_typ_obj_00_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ({})	data (data)
+ 
+060_typ-obj-01a.json (version 1)
+  URL         (local)
+  description 060_typ-obj-01a.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t65 (with view _060_typ_obj_01a_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ({"a":bool})	data (data)
+ 
+061_typ-obj-01b.json (version 1)
+  URL         (local)
+  description 061_typ-obj-01b.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t66 (with view _061_typ_obj_01b_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ({"a":{"b":number}})	data (data)
+ 
+062_typ-obj-02a.json (version 1)
+  URL         (local)
+  description 062_typ-obj-02a.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t67 (with view _062_typ_obj_02a_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ({"a":bool, "b":number})	data (data)
+ 
+063_typ-obj-02b.json (version 1)
+  URL         (local)
+  description 063_typ-obj-02b.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t68 (with view _063_typ_obj_02b_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ({"a":number, "b":number, "c":number})	data (data)
+ 
+064_typ-obj-02c.json (version 1)
+  URL         (local)
+  description 064_typ-obj-02c.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t69 (with view _064_typ_obj_02c_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ({"a":number,
+              "b":bool,
+              "c":string,
+              "d":nullable unknown})	data (data)
+ 
+065_typ-obj-03.json (version 1)
+  URL         (local)
+  description 065_typ-obj-03.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t70 (with view _065_typ_obj_03_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ({"id":number,
+              "name":{"firstName":string, "lastName":string}})	data (data)
+ 
+066_typ-obj-04.json (version 1)
+  URL         (local)
+  description 066_typ-obj-04.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t71 (with view _066_typ_obj_04_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ({"a":number, "b":[number], "c":number})	data (data)
+ 
+067_typ-obj-05.json (version 1)
+  URL         (local)
+  description 067_typ-obj-05.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t72 (with view _067_typ_obj_05_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([mixed])	data (data)
+ 
+068_typ-obj-06.json (version 1)
+  URL         (local)
+  description 068_typ-obj-06.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t73 (with view _068_typ_obj_06_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ({"a":string,
+              "b":[number],
+              "c":{"ca":number, "cb":[number], "cc":[mixed]}})	data (data)
+ 
+069_typ-obj-07.json (version 1)
+  URL         (local)
+  description 069_typ-obj-07.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t74 (with view _069_typ_obj_07_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([{"a":number}])	data (data)
+ 
+070_typ-obj-08.json (version 1)
+  URL         (local)
+  description 070_typ-obj-08.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t75 (with view _070_typ_obj_08_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([{"a":mixed}])	data (data)
+ 
+071_typ-obj-09a.json (version 1)
+  URL         (local)
+  description 071_typ-obj-09a.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t76 (with view _071_typ_obj_09a_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([{"a":optional number, "b":optional bool}])	data (data)
+ 
+072_typ-obj-09b.json (version 1)
+  URL         (local)
+  description 072_typ-obj-09b.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t77 (with view _072_typ_obj_09b_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([{"a":optional number, "b":optional bool}])	data (data)
+ 
+073_typ-obj-10.json (version 1)
+  URL         (local)
+  description 073_typ-obj-10.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t78 (with view _073_typ_obj_10_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ([{"a":number, "b":optional bool}])	data (data)
+ 
+074_typ-scalar-1.json (version 1)
+  URL         (local)
+  description 074_typ-scalar-1.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t79 (with view _074_typ_scalar_1_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON (number)	data (data)
+ 
+075_typ-scalar-2.json (version 1)
+  URL         (local)
+  description 075_typ-scalar-2.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t80 (with view _075_typ_scalar_2_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON (string)	data (data)
+ 
+076_typ-scalar-3.json (version 1)
+  URL         (local)
+  description 076_typ-scalar-3.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t81 (with view _076_typ_scalar_3_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON (bool)	data (data)
+ 
+077_typ-scalar-4.json (version 1)
+  URL         (local)
+  description 077_typ-scalar-4.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t82 (with view _077_typ_scalar_4_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON (nullable unknown)	data (data)
+ 
+078_3a.csv (version 1)
+  URL         (local)
+  description 078_3a.csv
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t83 (with view _078_3a_csv_v1)
+  typed       typed83 (with view _078_3a_csv_v1_typed)
+  row count   3
+  columns
+    	Type	Name
+    c1	TEXT	foo (foo)
+    c2	TEXT	bar (bar)
+ 
+079_longtext.csv (version 1)
+  URL         (local)
+  description 079_longtext.csv
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t84 (with view _079_longtext_csv_v1)
+  typed       typed84 (with view _079_longtext_csv_v1_typed)
+  row count   5
+  columns
+    	Type	Name
+    c1	INTEGER	id (id)
+    c2	DOCUMENT	document (document)
+ 
+080_longjson.json (version 1)
+  URL         (local)
+  description 080_longjson.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t85 (with view _080_longjson_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ({"document":string, "id":number})	data (data)
+ 
+081_utf8.csv (version 1)
+  URL         (local)
+  description 081_utf8.csv
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t86 (with view _081_utf8_csv_v1)
+  typed       typed86 (with view _081_utf8_csv_v1_typed)
+  row count   1
+  columns
+    	Type	Name
+    c1	TEXT	header (header)
+ 
+086_json_escape.json (version 1)
+  URL         (local)
+  description 086_json_escape.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t87 (with view _086_json_escape_json_v1)
+  typed       (not available)
+  row count   1
+  columns
+    	Type	Name
+    c1	JSON ({"name":string})	data (data)
+ 
+087_escaped_headers.csv (version 1)
+  URL         (local)
+  description 087_escaped_headers.csv
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t88 (with view _087_escaped_headers_csv_v1)
+  typed       typed88 (with view _087_escaped_headers_csv_v1_typed)
+  row count   1
+  columns
+    	Type	Name
+    c1	BOOLEAN	foo (foo)
+ 
+088_windows-cr.txt (version 1)
+  URL         (local)
+  description 088_windows-cr.txt
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t89 (with view _088_windows_cr_txt_v1)
+  typed       typed89 (with view _088_windows_cr_txt_v1_typed)
+  row count   3
+  columns
+    	Type	Name
+    c1	TEXT	SomeData (SomeData)
+    c2	TEXT	hello_1oneone (hello_1oneone)
+    c3	TEXT	Luna 22 (Luna_22)
+    c4	TEXT	Luna z6 (Luna_z6)
+    c5	TEXT	42-42-8z (_42_42_8z)
+    c6	TEXT	oh_foo (oh_foo)
+    c7	TEXT	 (_)
+    c8	TEXT	 (__1)
+    c9	TEXT	 (__2)
+    c10	TEXT	 (__3)
+ 
+large-json-array.json (version 1)
+  URL         (local)
+  description large-json-array.json
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t2 (with view large_json_array_json_v1)
+  typed       (not available)
+  row count   1000000
+  columns
+    	Type	Name
+    c1	JSON (number)	data (data)
+ 
+many-json-numbers.json (version 1)
+  URL         (local)
+  description many-json-numbers.json
+  tags        SUID:90433fcbd9e16297e6a7c1dacb1056394743194776e52f78ebf0a44b80b6b14f
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t1 (with view many_json_numbers_json_v1)
+  typed       (not available)
+  row count   1000000
+  columns
+    	Type	Name
+    c1	JSON (number)	data (data)
+ 
+many-rows.csv (version 1)
+  URL         (local)
+  description many-rows.csv
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t3 (with view many_rows_csv_v1)
+  typed       typed3 (with view many_rows_csv_v1_typed)
+  row count   2000000
+  columns
+    	Type	Name
+    c1	INTEGER	lotsavalues (lotsavalues)
+    c2	BOOLEAN	x (x)
+ 
+projects-data.csv (version 1)
+  URL         (local)
+  description projects-data.csv
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t5 (with view projects_data_csv_v1)
+  typed       typed5 (with view projects_data_csv_v1_typed)
+  row count   1000000
+  columns
+    	Type	Name
+    c1	foreign on t4 (ix)	(no header) (c1)
+    c2	TEXT	value (value)
+ 
+projects-md.csv (version 1)
+  URL         (local)
+  description projects-md.csv
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t4 (with view projects_md_csv_v1)
+  typed       typed4 (with view projects_md_csv_v1_typed)
+  row count   50
+  columns
+    	Type	Name
+    c1	TEXT	project-id (project_id)
+    c2	TEXT	metadata (metadata)

@@ -1,0 +1,48 @@
+compacted (version 1)
+  URL         (local)
+  description compacted
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t3 (with view compacted_v1)
+  typed       typed3 (with view compacted_v1_typed)
+  row count   2000004
+  columns
+    	Type	Name
+    ixs	custom type int[]	(no header) (ixs)
+    c1	TEXT	lotsavalues (lotsavalues)
+    c2	TEXT	x (x)
+ 
+many-rows.csv (version 1)
+  URL         (local)
+  description many-rows.csv
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  True
+  schema      CmdlineTests
+  table       t1 (compacted) (with view many_rows_csv_v1)
+  typed       typed1 (compacted) (with view many_rows_csv_v1_typed)
+  row count   2000000
+  columns
+    	Type	Name
+    c1	INTEGER	lotsavalues (lotsavalues)
+    c2	BOOLEAN	x (x)
+ 
+many-rows.csv (version 2)
+  URL         (local)
+  description many-rows.csv
+  tags        (no tags)
+  created     2016-10-01 12:00:00 UTC
+  added by    edsko
+  deprecated  False
+  schema      CmdlineTests
+  table       t2 (compacted) (with view many_rows_csv_v2)
+  typed       typed2 (compacted) (with view many_rows_csv_v2_typed)
+  row count   2000004
+  columns
+    	Type	Name
+    c1	INTEGER	lotsavalues (lotsavalues)
+    c2	BOOLEAN	x (x)

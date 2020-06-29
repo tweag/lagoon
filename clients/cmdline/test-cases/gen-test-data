@@ -1,0 +1,138 @@
+#!/bin/bash
+# vim: set ft=bash
+set -euo pipefail
+
+LOAD_CONFIG=true
+
+while [[ $# -gt 0 ]]
+do
+key="$1"
+
+case $key in
+    --no-load-config)
+        LOAD_CONFIG=false
+        shift
+        ;;
+    --load-config)
+        LOAD_CONFIG=true
+        shift
+        ;;
+    *)    # unknown option
+        echo "Unknown argument $1"
+        exit 1
+        ;;
+esac
+done
+
+if [ "$LOAD_CONFIG" = true ] ; then
+    echo "Loading config..."
+    source ${BASH_SOURCE%/*}/config.sh
+fi
+
+set +x
+mkdir -p ${GEN}
+
+# JSON file with lots of top-level values
+if [ ! -e ${GEN}/many-json-numbers.json ]
+then
+  echo -n "Generating ${GEN}/many-json-numbers.json.. "
+
+  for i in `seq 1 1000000`
+  do
+    echo $i >> ${GEN}/many-json-numbers.json
+  done
+
+  echo "OK"
+fi
+
+# JSON array with lots of elements
+if [ ! -e ${GEN}/large-json-array.json ]
+then
+  echo -n "Generating ${GEN}/large-json-array.json.. "
+
+  echo -n "[1" > ${GEN}/large-json-array.json
+  for i in `seq 2 1000000`
+  do
+    echo -n ",$i" >> ${GEN}/large-json-array.json
+  done
+  echo "]" >> ${GEN}/large-json-array.json
+
+  echo "OK"
+fi
+
+# CSV file with lots of rows
+if [ ! -e ${GEN}/many-rows.csv ]
+then
+  echo -n "Generating ${GEN}/many-rows.csv.. "
+
+  echo "lotsavalues,x" > ${GEN}/many-rows.csv
+  for i in `seq 1 1000000`
+  do
+    echo "$i,true" >> ${GEN}/many-rows.csv
+    echo "$i,false" >> ${GEN}/many-rows.csv
+  done
+
+  echo " OK"
+fi
+
+# CSV file with lots of rows, plus two extra rows (used for compaction testing)
+if [ ! -e ${GEN}/many-rows-extra ]
+then
+  echo -n "Generating ${GEN}/many-rows-extra.. "
+
+  echo "lotsavalues,x" > ${GEN}/many-rows-extra.csv
+  for i in `seq 1 1000002`
+  do
+    echo "$i,true" >> ${GEN}/many-rows-extra.csv
+    echo "$i,false" >> ${GEN}/many-rows-extra.csv
+  done
+
+  echo " OK"
+fi
+
+# CSV file with project identifiers + metadata
+N_PROJECTS=50
+if [ ! -e ${GEN}/projects-md.csv ]
+then
+  echo -n "Generating ${GEN}/projects-md.csv.. "
+
+  echo "project-id,metadata" > ${GEN}/projects-md.csv
+  for i in `seq 1 ${N_PROJECTS}`
+  do
+    echo "SRP$i,value-$i" >> ${GEN}/projects-md.csv
+  done
+
+  echo " OK"
+fi
+
+# CSV file with project data
+if [ ! -e ${GEN}/projects-data.csv ]
+then
+  echo -n "Generating ${GEN}/projects-data.csv.. "
+
+  # Write headers (project names) without newlines
+  echo -n "SRP1" > ${GEN}/projects-data.csv
+  for i in `seq 2 ${N_PROJECTS}`
+  do
+    echo -n ",SRP$i" >> ${GEN}/projects-data.csv
+  done
+  # newline
+  echo "" >> ${GEN}/projects-data.csv
+
+  # Write the data
+  for i in `seq 1 20000`
+  do
+      # Write a line (without newlines)
+      echo -n "true" >> ${GEN}/projects-data.csv
+
+      for i in `seq 2 ${N_PROJECTS}`
+      do
+          echo -n ",false" >> ${GEN}/projects-data.csv
+      done
+
+      # newline
+      echo "" >> ${GEN}/projects-data.csv
+  done
+
+  echo " OK"
+fi

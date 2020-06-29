@@ -1,0 +1,19 @@
+Package: RLagoon
+Title: Functions to import data in a lagoon and to make queries
+Version: 4.0.0.2
+Authors@R: person("Facundo", "Domínguez", email = "facundo.dominguez@tweag.io", role = c("aut", "cre"))
+Description: Provides functions to invoke the ingest tool and to list users,
+    table names and columns. It also provides a DBI and dplyr backend for
+    the Lagoon server which can be used to write dplyr queries.
+Depends:
+    R (>= 3.1.0)
+Imports:
+    DBI (>= 0.3.0),
+    methods,
+    dplyr,
+    dbplyr,
+    jsonlite,
+    httr
+License: All rights reserved.
+Encoding: UTF-8
+RoxygenNote: 7.1.1

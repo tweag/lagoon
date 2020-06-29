@@ -1,0 +1,6 @@
+# Configuration for the server (the REST CLI doesn't need this info)
+pgdatabase: lagoon
+pgpassword: lagoon
+pghost: /var/run/postgresql
+pguser: edsko
+pgschema: CmdlineTests
