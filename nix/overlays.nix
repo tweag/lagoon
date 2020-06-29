@@ -38,7 +38,7 @@
          { datalake-interface = ../src/interface;
            datalake-backend = ../src/backend;
            datalake-cmdline = ../clients/cmdline;
-           datalake-server = ../src/server;
+           datalake-server = ../server;
            datalake-frontend = ../src/frontend;
          })
          );
