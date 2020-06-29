@@ -11,31 +11,31 @@ Cleanup TODO List:
         * "runcompacttests" passes
 * [ ] Documentation cleanup/simplification
 
-    [X] README.md
-    [X] clients/README.md
-    [ ] clients/python/README.md
-    [ ] clients/R/README.md
-    [ ] clients/ruby/README.md
-    [X] clients/cmdline/README.md
-    [X] src/README.md
-    [X] src/backend/README.md
-    [X] src/interface/README.md
-    [X] src/frontend/README.md
-    [X] src/server/README.md
-    [X] nix/
+    * [X] README.md
+    * [X] clients/README.md
+    * [X] clients/python/README.md
+    * [X] clients/R/README.md
+    * [X] clients/ruby/README.md
+    * [X] clients/cmdline/README.md
+    * [X] src/README.md
+    * [X] src/backend/README.md
+    * [X] src/interface/README.md
+    * [X] src/frontend/README.md
+    * [X] src/server/README.md
+    * [X] nix/
 * [X] Move server to /app
 * [X] DockerHub Org
 * [X] License File
 * [X] Move Docker image(s) to repo
 * [ ] Update Docker image entrypoint
 * [ ] Updated CI Pipeline
-    [ ] Select preferred CI platform (GitHub Actions?)
-    [ ] Translate old CI scripts
-    [ ] Add stage for integration tests
-    [ ] Add stage for building docker images
+    * [ ] Select preferred CI platform (GitHub Actions?)
+    * [ ] Translate old CI scripts
+    * [ ] Add stage for integration tests
+    * [ ] Add stage for building docker images
 * [ ] Examples
 
-Also:
+Nice to have:
 * [ ] Bump nixpkgs and switch srcs to niv 
 * [ ] PyDatalake -> poetry2nix packaging
 
