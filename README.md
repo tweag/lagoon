@@ -9,7 +9,7 @@ wide range of client applications.
 
 ### Server and CLI
 
-The core components of datalake are its [server](server) and [command line client](clients/cmdline) applications. Follow the getting started guide at [TODO]() to 
+The core components of datalake are its [server](server) and [command line client](clients/cmdline) applications. Follow the [getting started guide](docs/GETTING_STARTED.md) to 
 configure and start running a datalake instance.
 
 
