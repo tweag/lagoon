@@ -227,6 +227,6 @@
   )
 
   (self: super: 
-    { datalakeDocker = super.callPackage ../docker/docker.nix {datalake-server=super.haskellPackages.datalake-server;}; }
+    { datalakeDocker = super.callPackage ../docker/docker.nix {datalake-server=super.haskellPackages.datalake-server; datalake-cmdline=super.haskellPackages.datalake-cmdline;}; }
   )
 ]

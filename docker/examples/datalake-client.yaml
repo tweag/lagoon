@@ -1,0 +1,4 @@
+dlserver_host: localhost
+dlserver_port: 1234
+dlserver_secure: False 
+dlserver_verify_cert: False

@@ -1,1 +1,20 @@
-# Components: postgres (dockerhub), datalake (dockerhub)
+version: "3"
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+        POSTGRES_PASSWORD: mysecretpassword
+    ports:
+      - "5432:5432"
+  datalake-server:
+    image: datalake-server:latest
+    depends_on:
+        - postgres
+    volumes:
+        - ${PWD}/examples/datalake-server.yaml:/datalake-server.yaml
+    command: 
+        - '--dummy-auth'
+        - '--port'
+        - '1234'
+    ports:
+        - 1234:1234
