@@ -55,4 +55,5 @@ To build the datalake server, simply install nix then run:
   * rubydatalake-tests
 
 **Docker Images:**
-  * datalakeDocker.datalake-server
+  * datalakeDocker.server
+  * datalakeDocker.client
