@@ -2,6 +2,11 @@ name: "master"
 on:
   push:
     branches: [ master ]
+    ignore-paths:
+      - 'docs/**'
+      - 'examples/**'
+      - '**.md'
+      - 'LICENSE'
 jobs:
   main:
     runs-on: ubuntu-latest

@@ -1,5 +1,7 @@
 # Datalake
 
+![](https://github.com/tweag/lagoon/workflows/master/badge.svg)
+
 Datalake is an application for centralizing structured and semi-structured data in an easy-to-query format. Written in Haskell 
 and built on top of Postgres, Datalake supports a variety of features including automatic schema generation, SQL queries, 
 cross-dataset querying, and dataset versioning. Datalake includes a REST API, allowing it to be easily integrated with a 
@@ -25,7 +27,7 @@ For convenience, Datalake also includes client libraries for interacting with it
 
 ### Docker
 
-Pre-built docker images containing the datalake server and CLI may be found on [DockerHub](TODO). Simply pull one of the images there and follow the [configuration guide](TODO) to get started.
+Pre-built docker images containing the datalake server and CLI may be found on [DockerHub](TODO). Simply pull one of the images there and follow the [configuration guide](docs/CONFIG.md) to get started.
 
 ### From source
 
