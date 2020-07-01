@@ -43,7 +43,7 @@ jobs:
         docker tag datalake-client:latest "tweag/datalake-client:${{ steps.vars.outputs.sha_short }}"
         docker tag datalake-client:latest "tweag/datalake-client:latest"
     - name: Push docker images to DockerHub
-    - run: |
+      run: |
         docker push tweag/datalake-server:latest
         docker push "tweag/datalake-server:${{ steps.vars.outputs.sha_short }}"
         docker push tweag/datalake-client:latest
