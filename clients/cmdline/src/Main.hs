@@ -29,14 +29,14 @@ import qualified Data.Version              as V (showVersion)
 import qualified Network.HTTP.Client       as Client
 import qualified Network.HTTP.Client.TLS   as TLS
 
-import Pfizer.Datalake.Client
-import Pfizer.Datalake.Client.AppSkeleton
-import Pfizer.Datalake.Client.Cmdline
-import Pfizer.Datalake.Client.FriendlyException.Orphans ()
-import Pfizer.Datalake.Client.Prog
-import Pfizer.Datalake.Client.Servant.Cookie
-import Pfizer.Datalake.Interface
-import qualified Paths_datalake_cmdline as Paths
+import Lagoon.Client
+import Lagoon.Client.AppSkeleton
+import Lagoon.Client.Cmdline
+import Lagoon.Client.FriendlyException.Orphans ()
+import Lagoon.Client.Prog
+import Lagoon.Client.Servant.Cookie
+import Lagoon.Interface
+import qualified Paths_lagoon_cmdline as Paths
 
 app :: Cmdline -> IO ()
 app Cmdline{..} = appSkeleton skeletonCmdline $ \yamlConfig -> do
@@ -90,7 +90,7 @@ main :: IO ()
 main = do
     cmdLine@Cmdline{..} <- getCmdline
     when (cmdShowVersion cmd) $ do
-      putStrLn $ "datalake version " ++ V.showVersion Paths.version
+      putStrLn $ "lagoon version " ++ V.showVersion Paths.version
       exitSuccess
     catches (app cmdLine) [
         handler (Proxy :: Proxy ServantError)

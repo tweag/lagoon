@@ -36,5 +36,5 @@ Nice to have:
     * [ ] Fix issue where integration tests never exit, making them un-runnable on CI
     * [ ] Update integration tests to run in sandbox instead of on host
 * [ ] Bump nixpkgs and switch srcs to niv 
-* [ ] PyDatalake -> poetry2nix packaging
+* [ ] PyLagoon -> poetry2nix packaging
 * [ ] Publish python, R, ruby packages to pypi, cran, etc.?

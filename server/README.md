@@ -1,26 +1,26 @@
-# Datalake REST server
+# Lagoon REST server
 
 ## Initializing and migrating the database
 
-The `datalake` tool maintains some database metadata in two tables called
+The `lagoon` tool maintains some database metadata in two tables called
 `sources` and `sourceColumns`. To create these tables, run
 
 ```
-# datalake-server init-db --db-admin-pass '<password>'
+# lagoon-server init-db --db-admin-pass '<password>'
 Database initialized
 ```
 
 The database administrator password can be changed later using
 
 ```
-# datalake-server change-db-admin-pass --old-db-admin-pass '<old>' --new-db-admin-pass '<new>'
+# lagoon-server change-db-admin-pass --old-db-admin-pass '<old>' --new-db-admin-pass '<new>'
 ```
 
 To migrate an existing database initialized by an older version of the ingest
 tool, run
 
 ```
-# datalake-server migrate
+# lagoon-server migrate
 Migration complete
 ```
 
@@ -28,7 +28,7 @@ If you want to reset the contents of the database, you can reset the state of
 the database to a clean state with
 
 ```
-# datalake-server reset-db --db-admin-pass '<password>'
+# lagoon-server reset-db --db-admin-pass '<password>'
 Database reset
 ```
 
@@ -42,7 +42,7 @@ you will probably want to specify at least a path to a yaml file with the
 PostgreSQL settings:
 
 ```
-# datalake-server --config /path/to/config.yaml
+# lagoon-server --config /path/to/config.yaml
 ```
 
 ### Using SSL
@@ -50,7 +50,7 @@ PostgreSQL settings:
 To enable secure connections to the server, run the server with
 
 ```
-# datalake-server --tls-cert /path/to/cert.pem --tls-key /path/to/key.pem ...
+# lagoon-server --tls-cert /path/to/cert.pem --tls-key /path/to/key.pem ...
 ```
 
 When started like this, the server will reject insecure (plaintext) connections
@@ -71,13 +71,13 @@ bucket `bucket_name` (see the [notes](#a-note-on-encoding) on encoding).
 To enable S3 support for remote files, run the server with
 
 ```
-# datalake-server --s3-env
+# lagoon-server --s3-env
 ```
 
 or
 
 ```
-# datalake-server --s3-file --s3-credentials <file> --s3-key <key>
+# lagoon-server --s3-file --s3-credentials <file> --s3-key <key>
 ```
 
 The former enables S3 support using AWS credentials set in the environment
@@ -97,13 +97,13 @@ use `aws_key_1` and `aws_secret_1` in a file as above stored in
 `/home/pfizer/aws-credentials` use the following:
 
 ```
-# datalake-server --s3-file --s3-credentials /home/pfizer/aws-credentials --s3-key my_key_1
+# lagoon-server --s3-file --s3-credentials /home/pfizer/aws-credentials --s3-key my_key_1
 ```
 
 #### A note on encoding
 
 AWS S3 allows non-URL characters in the bucket names and object keys. In order
-to deal with this, the Datalake REST API requires the bucket name and object
+to deal with this, the Lagoon REST API requires the bucket name and object
 keys to be URL encoded. For instance with bucket `my_bucket` and object key `my
 object` the `remote` URI would look like this:
 
@@ -307,7 +307,7 @@ curl -v -X POST \
 ### Ingesting remote files
 
 Note that remote files can also be ingested by specifying the file's URL in the
-`remote` parameter (see below for a list of parameters). In such case the request body will be empty and the dataset will be fetched by the datalake-server:
+`remote` parameter (see below for a list of parameters). In such case the request body will be empty and the dataset will be fetched by the lagoon-server:
 
 ```
 curl -v -X POST \
@@ -317,7 +317,7 @@ curl -v -X POST \
 Note that value of the remote parameter,
 `http://some-server.example.com/foo/dataset.txt`, had to be HTTP-escaped. This
 should be handled for you if you are using third party libraries to craft HTTP
-requests. The Datalake server can work with `http://`, `https://` and `s3://`
+requests. The Lagoon server can work with `http://`, `https://` and `s3://`
 protocols (see [Using S3](#using-s3) below for more information about S3).
 
 Note that all the query parameters described above (like `name`, `tag`, etc)
@@ -427,7 +427,7 @@ where `<label>` is one of
 and `LEXEME` is a lexeme (search term consisting of letters only, which will
 be stemmed).
 
-This query language is parsed and then translated to PostgreSQL's internal syntax for queries, which from the point of view of Datalake clients (software or users) is just an implementation detail that they do not need to be concerned with.
+This query language is parsed and then translated to PostgreSQL's internal syntax for queries, which from the point of view of Lagoon clients (software or users) is just an implementation detail that they do not need to be concerned with.
 
 Some examples:
 

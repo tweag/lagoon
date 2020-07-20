@@ -1,31 +1,31 @@
-# Datalake Developer Documentation
+# Lagoon Developer Documentation
 
 ## Overview
 
-The overarching goal of the Datalake project is to provide a central database
+The overarching goal of the Lagoon project is to provide a central database
 of medical research results to facilitate scientific research. It provides means
-to add new results into this "datalake" (ingest), query this database (data
+to add new results into this "lagoon" (ingest), query this database (data
 discovery), as well as ways to interact with the data through bindings to R,
 MatLab and programming language API bindings.
 
-The datalake project consists of a number of related components, each of which
+The lagoon project consists of a number of related components, each of which
 has its own developer documentation:
 
-* [datalake-interface](interface/HACKING.md) is a Haskell library that defines the API
-  between the backend (datalake server) on the one hand and the frontend (either
-  the webapp, the datalake command-line tool or the R/Ruby/Python clients) on
+* [lagoon-interface](interface/HACKING.md) is a Haskell library that defines the API
+  between the backend (lagoon server) on the one hand and the frontend (either
+  the webapp, the lagoon command-line tool or the R/Ruby/Python clients) on
   the other.
-* [datalake-backend](backend/HACKING.md) implements the bulk of the backend
+* [lagoon-backend](backend/HACKING.md) implements the bulk of the backend
   functionality (server and server).
-* [datalake-cmdline](cmdline/HACKING.md) is a thin layer around the backend library
+* [lagoon-cmdline](cmdline/HACKING.md) is a thin layer around the backend library
   that makes its functionality available through a command line program.
-* [datalake-server](server/HACKING.md) is a thin layer around the backend
+* [lagoon-server](server/HACKING.md) is a thin layer around the backend
   library that makes its functionality available through a REST API.
-* [datalake-webapp](webapp/HACKING.md) provides data discovery as well as
+* [lagoon-webapp](webapp/HACKING.md) provides data discovery as well as
   ingest functionality through a web interface.
-* [RDatalake](RDatalake/HACKING.md) provides an R interface to the datalake.
-* [MatlabDatalake](MatlabDatalake/HACKING.md) provides a Matlab interface to the
-  datalake.
+* [RLagoon](RLagoon/HACKING.md) provides an R interface to the lagoon.
+* [MatlabLagoon](MatlabLagoon/HACKING.md) provides a Matlab interface to the
+  lagoon.
 
 
 ## Tests

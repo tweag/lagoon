@@ -6,8 +6,8 @@ bin/
 .*.swp
 .DS_Store
 dbinfo.actual
-datalake-linux-x86_64
-datalake-linux-x86_64.tar.gz
+lagoon-linux-x86_64
+lagoon-linux-x86_64.tar.gz
 .Rhistory
 *.zip
 ingest/test-cases/generated
@@ -19,7 +19,7 @@ terraform.tfstate.backup
 temp/
 
 # CI / script automation
-ci/datalake-linux-x86_64/
+ci/lagoon-linux-x86_64/
 scripts/webapp_build
 
 # webapp artifacts
@@ -37,12 +37,14 @@ _build/
 *.egg-info
 __pycache__
 
-# No datalake credentials
-datalake.yaml
+# No lagoon credentials
+lagoon.yaml
 
 # No nix result files
 result*
 
 # No bundix files
-RubyDatalake/.bundle
-RubyDatalake/vendor
+RubyLagoon/.bundle
+RubyLagoon/vendor
+
+.vscode

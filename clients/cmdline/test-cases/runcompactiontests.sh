@@ -62,4 +62,4 @@ diff many_rows_2.csv many_rows_2_compact.csv
 
 ${GO} dump-db-info --db-admin-pass '' > dbinfo-compact.actual
 
-diff -b dbinfo-compact.actual ${DATALAKE_TEST_DIR}/dbinfo-compact.expected
+diff -b dbinfo-compact.actual ${LAGOON_TEST_DIR}/dbinfo-compact.expected

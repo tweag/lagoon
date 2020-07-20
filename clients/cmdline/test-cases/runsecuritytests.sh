@@ -60,7 +60,7 @@ fi
 ## CREATING USERS
 ##
 ## When users are logging in, we first verify their identity using the
-## authentication provider, and then lookup their local user ID in the Datalake
+## authentication provider, and then lookup their local user ID in the Lagoon
 ## metadata tables. If we don't have an entry yet for this user, we create it.
 ## However, we don't automatically create entries like this in other commands
 ## (such as manage-user) since this would make it too easy to make a typo and
@@ -162,7 +162,7 @@ ${GO} manage-user --db-admin-pass '' --create-user 'Carol'
 
 set +u
 if [ -z "$EXAMPLE_DATASET" ]; then
-    EXAMPLE_DATASET=${DATALAKE_TEST_DIR}/tests/087_escaped_headers.csv
+    EXAMPLE_DATASET=${LAGOON_TEST_DIR}/tests/087_escaped_headers.csv
 fi
 set -u
 

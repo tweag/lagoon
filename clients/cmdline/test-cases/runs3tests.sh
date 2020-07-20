@@ -79,7 +79,7 @@ ${GO} ${RTSOPTS} ingest -u edsko -p '' \
 ##
 
 ${AWS} s3 cp \
-    ${DATALAKE_TEST_DIR}/tests/001_simple.csv \
+    ${LAGOON_TEST_DIR}/tests/001_simple.csv \
     "s3://${AWS_BUCKET}/simple file.csv"
 
 ${GO} ${RTSOPTS} ingest -u edsko -p '' \
@@ -89,7 +89,7 @@ ${GO} ${RTSOPTS} ingest -u edsko -p '' \
 
 ${GO} dump-db-info --db-admin-pass '' > dbinfo-s3.actual
 
-diff -b dbinfo-s3.actual ${DATALAKE_TEST_DIR}/dbinfo-s3.expected
+diff -b dbinfo-s3.actual ${LAGOON_TEST_DIR}/dbinfo-s3.expected
 
 ##
 ## If we get this far, everything is OK

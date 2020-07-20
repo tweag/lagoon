@@ -1,23 +1,23 @@
-# datalake
+# lagoon
 
-The `datalake` command line tool makes the functionality of the `datalake-server` REST API
+The `lagoon` command line tool makes the functionality of the `lagoon-server` REST API
 available as a command line program. It uses the Servant API from
-`datalake-interface` and the definition of, and parsers for, the command line
+`lagoon-interface` and the definition of, and parsers for, the command line
 options.
 
 ## Configuration
 
-The tool needs to know where the datalake server is. This can be specified
-on the command line or in a yaml file (defaults to `datalake.yaml`, can
+The tool needs to know where the lagoon server is. This can be specified
+on the command line or in a yaml file (defaults to `lagoon.yaml`, can
 be overriden using the `--config` command line argument).
 
 An example yaml file is
 
 ```
-dlserver_host: localhost
-dlserver_port: 22089
-dlserver_secure: True
-dlserver_verify_cert: True
+lagoonserver_host: localhost
+lagoonserver_port: 22089
+lagoonserver_secure: True
+lagoonserver_verify_cert: True
 ```
 
 These arguments can be overriden on the command line.
@@ -34,7 +34,7 @@ response from the server to the client may or may not be filtered. This is the
 default:
 
 ```
-# datalake list-sources
+# lagoon list-sources
 <server response>
 ```
 
@@ -43,7 +43,7 @@ default:
 The most obvious way to authenticate is to specify a username and password:
 
 ```
-datalake list-sources -u '<user>' -p '<pass>'
+lagoon list-sources -u '<user>' -p '<pass>'
 <server response>
 ```
 
@@ -54,7 +54,7 @@ Finally, it is possible to login as a separate step and obtain an
 used on subsequent requests. To obtain the token:
 
 ```
-# datalake login -u '<user>' -p '<pass>' token
+# lagoon login -u '<user>' -p '<pass>' token
 ok
 ```
 
@@ -62,14 +62,14 @@ This will have created a file called `token` (the filename can be anything, of
 course). The authentication token can be used as follows:
 
 ```
-# datalake list-sources --resume token
+# lagoon list-sources --resume token
 <server response>
 ```
 
 The session can be terminated with
 
 ```
-# datalake logout token
+# lagoon logout token
 ok
 ```
 
@@ -82,7 +82,7 @@ Data sources can be imported from local files or from remote locations. To
 import from a local file, just provide the path to the file:
 
 ```
-# datalake ingest -d 'Cancer tumor data' -n proteinatlas/cancer sources/proteinatlas/cancer.csv
+# lagoon ingest -d 'Cancer tumor data' -n proteinatlas/cancer sources/proteinatlas/cancer.csv
 Starting ingest proper
   Processed 100000 records
   Processed 200000 records
@@ -145,7 +145,7 @@ results of type inference; this can be disabled with the `--no-typed` option.
 To ingest a remote file, provide the URL instead:
 
 ```
-# datalake ingest -n embl-ebi/genes.fpkm http://ftp.ebi.ac.uk/pub/databases/arrayexpress/data/atlas/rnaseq/studies/ena/SRP033494/arabidopsis_thaliana/genes.fpkm.tsv
+# lagoon ingest -n embl-ebi/genes.fpkm http://ftp.ebi.ac.uk/pub/databases/arrayexpress/data/atlas/rnaseq/studies/ena/SRP033494/arabidopsis_thaliana/genes.fpkm.tsv
 Starting ingest proper
   Processed 33602 records
 Creating indices for CmdlineTests.t2
@@ -250,7 +250,7 @@ SRP003754 SRR446307  29234304                       29234304
 It can be ingested through regular ingestion commands:
 
 ```
-datalake -n 'srp-003754' 'srp-003754-metadata.tsv'
+lagoon -n 'srp-003754' 'srp-003754-metadata.tsv'
 ```
 
 The following "data" file, a tab separated file name `counts_exon.tsv`
@@ -267,11 +267,11 @@ SRR446301         SRR446302         SRR446303           SRR446304           ...
 ```
 
 By specifying a "metadata" source through the use of `--source-metadata-name`
-and `--source-metadata-field` flags, datalake will internally reference the
+and `--source-metadata-field` flags, lagoon will internally reference the
 source `srp-003754`:
 
 ```
-datalake -n 'srp-003754-counts-exon'         \
+lagoon -n 'srp-003754-counts-exon'         \
          --source-metadata-name 'srp-003754' \
          --source-metadata-field 'run'       \
          'counts_exon.tsv'
@@ -295,13 +295,13 @@ local disk first before starting the ingest process.
 A source can be deleted either by specifying a particular version:
 
 ``` shell
-# datalake delete-source "my-source" -v 7
+# lagoon delete-source "my-source" -v 7
 ```
 
 or by deleting all the versions of a particular source (source name, really):
 
 ``` shell
-# datalake delete-source "my-source"
+# lagoon delete-source "my-source"
 
 ```
 
@@ -310,7 +310,7 @@ or by deleting all the versions of a particular source (source name, really):
 You can list all available (already ingested) data sources using
 
 ```
-# datalake list-sources
+# lagoon list-sources
 proteinatlas/cancer (version 1)
   URL         (local)
   description Cancer tumor data
@@ -366,7 +366,7 @@ embl-ebi/genes.fpkm (version 1)
 Alternatively, information about a single source can be requested using
 
 ```
-# datalake show-source proteinatlas/cancer
+# lagoon show-source proteinatlas/cancer
 proteinatlas/cancer (version 1)
   URL         (local)
   description Cancer tumor data
@@ -399,10 +399,10 @@ as we saw above, can be requested again later using `show-source`. If desired,
 this type information can be overridden:
 
 ```
-# datalake set-type proteinatlas/cancer -c c5 TEXT
+# lagoon set-type proteinatlas/cancer -c c5 TEXT
 Set type to TEXT
 
-# bin/datalake show-source proteinatlas/cancer
+# bin/lagoon show-source proteinatlas/cancer
 proteinatlas/cancer (version 1)
   URL         (local)
   description Cancer tumor data
@@ -427,7 +427,7 @@ Once the user is satisfied the type information is correct, they can reconstruct
 a typed table using
 
 ```
-# datalake make-typed proteinatlas/cancer
+# lagoon make-typed proteinatlas/cancer
 Creating typed table .. ok
 Creating indices for CmdlineTests.typed1
   Creating primary key .. ok
@@ -463,10 +463,10 @@ be available, so that if desired the typed table can be replaced at any later
 stage:
 
 ```
-# datalake set-type proteinatlas/cancer -c c5 INTEGER
+# lagoon set-type proteinatlas/cancer -c c5 INTEGER
 Set type to INTEGER
 
-# datalake make-typed proteinatlas/cancer
+# lagoon make-typed proteinatlas/cancer
 Creating typed table .. ok
 Creating indices for CmdlineTests.typed1
   Creating primary key .. ok
@@ -503,7 +503,7 @@ Sources can be tagged with an arbitrary number of tags; these tags can be
 specified during ingest:
 
 ```
-# datalake ingest --tag proteinatlas --tag subcellular -n proteinatlas/subcellular sources/proteinatlas/subcellular_location.csv
+# lagoon ingest --tag proteinatlas --tag subcellular -n proteinatlas/subcellular sources/proteinatlas/subcellular_location.csv
 Starting ingest proper
   Processed 12003 records
 Creating indices for CmdlineTests.t3
@@ -562,13 +562,13 @@ proteinatlas/subcellular (version 1)
 Then can also be added or removed later:
 
 ```
-# datalake tag proteinatlas/subcellular localization
+# lagoon tag proteinatlas/subcellular localization
 Tag localization added
 
-# datalake untag proteinatlas/subcellular proteinatlas
+# lagoon untag proteinatlas/subcellular proteinatlas
 Tag proteinatlas removed
 
-# datalake show-source proteinatlas/subcellular
+# lagoon show-source proteinatlas/subcellular
 proteinatlas/subcellular (version 1)
   URL         (local)
   description proteinatlas/subcellular
@@ -599,7 +599,7 @@ proteinatlas/subcellular (version 1)
 Data sources in JSON can be ingested in the same way:
 
 ```
-# datalake ingest -n targetvalidation/assoc sources/targetvalidation/assoc-10000.json
+# lagoon ingest -n targetvalidation/assoc sources/targetvalidation/assoc-10000.json
 Starting ingest proper
   Processed 10000 records
 Creating indices for CmdlineTests.t4
@@ -688,7 +688,7 @@ file. For a JSON file that contains a top-level array of values, each element
 of the array can be ingested as a separate row using
 
 ```
-datalake --json-path '[_]'
+lagoon --json-path '[_]'
 ```
 
 If the top-level value is an object and it's too big to load as a single row,
@@ -697,7 +697,7 @@ consider the dosing guidelines from the PharmGKB data set. To ingest only the
 "related genes" from this data set, we can do
 
 ```
-# datalake ingest -n PharmKGB/amitriptyline/relatedGenes --json-path '{"relatedGenes":[_]}' sources/PharmGKB/dosingGuidelines/CPIC_Guideline_for_amitriptyline_and_CYP2C19_CYP2D6.json
+# lagoon ingest -n PharmKGB/amitriptyline/relatedGenes --json-path '{"relatedGenes":[_]}' sources/PharmGKB/dosingGuidelines/CPIC_Guideline_for_amitriptyline_and_CYP2C19_CYP2D6.json
 Starting ingest proper
   Processed 2 records
 Creating indices for CmdlineTests.t1
@@ -747,14 +747,14 @@ read and upload new versions of the dataset, though not manage it. Previously
 ingested datasets can be made private using
 
 ```
-datalake manage -u 'Bob' -p '' 'Bob1' --private
+lagoon manage -u 'Bob' -p '' 'Bob1' --private
 ```
 
 In this example user `Bob` sets dataset with name `Bob1` to private. Datasets
 can be made public again using
 
 ```
-datalake manage -u 'Bob' -p '' 'Bob1' --public
+lagoon manage -u 'Bob' -p '' 'Bob1' --public
 ```
 
 This requires the user (in this example, Bob) to have MANAGE permissions on that
@@ -764,7 +764,7 @@ been granted MANAGE permissions by default.
 Datasets can also be declared as private on ingest:
 
 ```
-datalake ingest -u 'Bob' -p '' -n 'Bob2' --private <dataset>
+lagoon ingest -u 'Bob' -p '' -n 'Bob2' --private <dataset>
 ```
 
 Declaring it private on ingest, rather than after ingest, avoids a window where
@@ -783,13 +783,13 @@ It is also possible to give a dataset public READ access, but not public UPDATE
 access:
 
 ```
-datalake manage -u 'Bob' -p '' 'Bob1' --set-group-access 'public' --read
+lagoon manage -u 'Bob' -p '' 'Bob1' --set-group-access 'public' --read
 ```
 
 or indeed public MANAGE access:
 
 ```
-datalake manage -u 'Bob' -p '' 'Bob1' --set-group-access 'public' --manage
+lagoon manage -u 'Bob' -p '' 'Bob1' --set-group-access 'public' --manage
 ```
 
 though this is probably not advisable.
@@ -800,7 +800,7 @@ Users with MANAGE privileges to a dataset can also grant MANAGE privileges to
 other users:
 
 ```
-datalake manage -u 'Bob' -p '' 'Bob1' --set-user-access 'Alice' --manage
+lagoon manage -u 'Bob' -p '' 'Bob1' --set-user-access 'Alice' --manage
 ```
 
 In this example Bob grants Alice MANAGE privileges.
@@ -813,7 +813,7 @@ READ (`--read)`, or UPDATE (`--update`).
 To create a new group, use
 
 ```
-# datalake create-group -u 'Bob' -p '' --group BC
+# lagoon create-group -u 'Bob' -p '' --group BC
 ```
 
 Creating a group requires CREATEGROUP privileges.
@@ -821,8 +821,8 @@ Creating a group requires CREATEGROUP privileges.
 To add members to a group, use
 
 ```
-# datalake manage-group -u 'Bob' -p '' --group BC --add-user 'Bob'
-# datalake manage-group -u 'Bob' -p '' --group BC --add-user 'Alice'
+# lagoon manage-group -u 'Bob' -p '' --group BC --add-user 'Bob'
+# lagoon manage-group -u 'Bob' -p '' --group BC --add-user 'Alice'
 ```
 
 Note that although Bob created this group, he is not automatically a member of
@@ -830,7 +830,7 @@ the group himself (though he can add himself, of course, if he wishes). To
 remove members from a group, use
 
 ```
-# datalake manage-group -u 'Bob' -p '' --group BC --remove-user 'Alice'
+# lagoon manage-group -u 'Bob' -p '' --group BC --remove-user 'Alice'
 ```
 
 Adding users to and removing users from a group requires MANAGEGROUP privileges
@@ -838,8 +838,8 @@ on that group. The user who created the group is automatically granted
 MANAGEGROUP privileges, but this can also be granted and revoked explicitly:
 
 ```
-# datalake manage-group -u 'Carol' -p '' --group AC --grant-manage 'Alice'
-# datalake manage-group -u 'Alice' -p '' --group AC --revoke-manage 'Carol'
+# lagoon manage-group -u 'Carol' -p '' --group AC --grant-manage 'Alice'
+# lagoon manage-group -u 'Alice' -p '' --group AC --revoke-manage 'Carol'
 ```
 
 Anyone with MANAGEGROUP privileges on a group can also grant or revoke that
@@ -850,7 +850,7 @@ privilege to other users.
 To grant privileges to, or revoke from, all members of a group, use
 
 ```
-datalake manage -u 'Bob' -p '' 'Bob1' --set-group-access 'AC' --read
+lagoon manage -u 'Bob' -p '' 'Bob1' --set-group-access 'AC' --read
 ```
 
 This works in a very similar way to `--set-user-access`, discussed above.
@@ -862,7 +862,7 @@ A number of actions can only be done by the database administrator.
 ### Creating users
 
 User identity is verified using an external service (typically an LDAP
-directory), but the Datalake server additionally stores some internal
+directory), but the Lagoon server additionally stores some internal
 information about users. When a user logs in but there is no local information
 about that user available yet, a new entry for that user is created
 automatically. Since this happens only after authentication, we can be sure
@@ -874,11 +874,11 @@ way to verify the username and avoid typos. Therefore only the DB administrator
 can explicitly create new user entries:
 
 ```
-# datalake manage-user --db-admin-pass '' --create-user 'Alice'
+# lagoon manage-user --db-admin-pass '' --create-user 'Alice'
 ```
 
 This is typically only necessary in order to grant privileges to users who have
-not yet logged in to the Datalake server.
+not yet logged in to the Lagoon server.
 
 ### Granting or revoking `CREATEGROUP`, `CREATE`
 
@@ -886,8 +886,8 @@ Users can only create new groups if they have CREATEGROUP privileges; this
 can only be granted or revoked by the DB admin:
 
 ```
-# datalake manage-user --db-admin-pass '' --revoke-create-group 'Carol'
-# datalake manage-user --db-admin-pass '' --grant-create-group 'Carol'
+# lagoon manage-user --db-admin-pass '' --revoke-create-group 'Carol'
+# lagoon manage-user --db-admin-pass '' --grant-create-group 'Carol'
 ```
 
 Users can only create new datasets (as opposed to updating existing ones)
@@ -895,6 +895,6 @@ if they have CREATE priviliges; this can only be granted or revoked by the
 DB admin:
 
 ```
-datalake manage-user --db-admin-pass '' --revoke-create 'Carol'
-datalake manage-user --db-admin-pass '' --grant-create 'Carol'
+lagoon manage-user --db-admin-pass '' --revoke-create 'Carol'
+lagoon manage-user --db-admin-pass '' --grant-create 'Carol'
 ```

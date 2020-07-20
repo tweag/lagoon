@@ -1,4 +1,0 @@
-dlserver_host: localhost
-dlserver_port: 22089
-dlserver_secure: False 
-dlserver_verify_cert: False 

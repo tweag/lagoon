@@ -1,8 +1,0 @@
-# Configuration for the server (the client CLI doesn't need this info)
-pgdatabase: postgres
-pgpassword: mysecretpassword
-pghost: postgres
-pgport: 5432
-pguser: postgres
-pgschema: demo
-dbadminpassword: datalakepassword

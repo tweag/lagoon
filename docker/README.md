@@ -1,9 +1,9 @@
 # docker
 
-Since this project uses nix for packaging, Docker images are generated using nix's dockertools module and are defined as a nix expression in [docker.nix](docker.nix) instead of a traditional Dockerfile.  Docker images for the datalake server and command line client are available at [TODO - DockerHubLink]().
+Since this project uses nix for packaging, Docker images are generated using nix's dockertools module and are defined as a nix expression in [docker.nix](docker.nix) instead of a traditional Dockerfile.  Docker images for the lagoon server and command line client are available at [TODO - DockerHubLink]().
 
 ### Example
-A [docker-compose file](./docker-compose.yaml) which spins up a local datalake server is included in this directory along with example config files in [examples/](./examples/).
+A [docker-compose file](./docker-compose.yaml) which spins up a local lagoon server is included in this directory along with example config files in [examples/](./examples/).
 
 To boot the server and database with the example configurations, run:
 ```console
@@ -13,11 +13,11 @@ $ docker-compose up
 Now that the server is running locally , we can use the command line client image to interact with it:
 ```console
 
-$ docker run --network host -v $PWD/docker/examples/datalake-client.yaml:/datalake-client.yaml datalake-client:latest --config /datalake-client.yaml --help
+$ docker run --network host -v $PWD/docker/examples/lagoon-client.yaml:/lagoon-client.yaml lagoon-client:latest --config /lagoon-client.yaml --help
 
     Ingest new data sources into the database
 
-        Usage: datalake [--config FILE] ([--quiet] | [--verbose]) ([--version] |
+        Usage: lagoon [--config FILE] ([--quiet] | [--verbose]) ([--version] |
                         [COMMAND]) [--host ARG] [--port ARG] [--secure] [--ignore-cert]
 
         Available options:
@@ -27,8 +27,8 @@ $ docker run --network host -v $PWD/docker/examples/datalake-client.yaml:/datala
                                 errors)
         --verbose                Verbose output
         --version                Show version and exit
-        --host ARG               datalake-server host
-        --port ARG               datalake-server port
+        --host ARG               lagoon-server host
+        --port ARG               lagoon-server port
         --secure                 Connect over SSL
         --ignore-cert            Don't verify SSL certificate
 
@@ -53,10 +53,10 @@ $ docker run --network host -v $PWD/docker/examples/datalake-client.yaml:/datala
 ```
 ```console
 
-$ docker run --network host -v $PWD/docker/examples/datalake-client.yaml:/datalake-client.yaml datalake-client:latest \
-    --config /datalake-client.yaml \
+$ docker run --network host -v $PWD/docker/examples/lagoon-client.yaml:/lagoon-client.yaml lagoon-client:latest \
+    --config /lagoon-client.yaml \
     manage-user \
-    --db-admin-pass datalakepassword \
+    --db-admin-pass lagoonpassword \
     --create-user myname
     
         create user myname  OK
@@ -72,6 +72,6 @@ docker-compose down
 
 ### Building Images
 
-Docker image derivations are defined in [docker.nix](./docker.nix) and should be accessed via the default.nix in the repository root directory. To build the datalake server image tarball and load into docker, run:
+Docker image derivations are defined in [docker.nix](./docker.nix) and should be accessed via the default.nix in the repository root directory. To build the lagoon server image tarball and load into docker, run:
     
-    docker load < $(nix-build ../default.nix -A datalakeDocker.datalake-server)
+    docker load < $(nix-build ../default.nix -A lagoonDocker.lagoon-server)

@@ -17,19 +17,19 @@ import Control.Exception
 import Data.Proxy
 import System.Exit
 
-import Pfizer.Datalake.DB
-import Pfizer.Datalake.Interface
-import Pfizer.Datalake.ManageDb
-import Pfizer.Datalake.Server
-import Pfizer.Datalake.Server.AppSkeleton
-import Pfizer.Datalake.Server.Cmdline
-import Pfizer.Datalake.Util.PostgreSQL
+import Lagoon.DB
+import Lagoon.Interface
+import Lagoon.ManageDb
+import Lagoon.Server
+import Lagoon.Server.AppSkeleton
+import Lagoon.Server.Cmdline
+import Lagoon.Util.PostgreSQL
 
 app :: Cmdline -> IO ()
 app cmdline@Cmdline{skeletonCmdline} =
       rethrowManageDbException
     $ appSkeleton skeletonCmdline
-    $ datalakeServer cmdline
+    $ lagoonServer cmdline
 
 main :: IO ()
 main = do

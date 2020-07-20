@@ -1,0 +1,64 @@
+name:                lagoon-frontend
+version:             0.4.0.0
+synopsis:            Client library to the lagoon
+license:             AllRightsReserved
+author:              Edsko de Vries
+maintainer:          edsko@well-typed.com
+copyright:           (c) 2016 Pfizer, Inc
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Lagoon.Client
+                       Lagoon.Client.AppSkeleton
+                       Lagoon.Client.FriendlyException.Orphans
+                       Lagoon.Client.Prog
+                       Lagoon.Client.Serialization
+                       Lagoon.Client.Servant.Conduit
+                       Lagoon.Client.Servant.Cookie
+                       Lagoon.Client.Servant.QueryParamsEither
+                       Lagoon.Client.Servant.Session
+  build-depends:       base
+                     , aeson
+                     , bytestring
+                     , conduit
+                     , conduit-combinators
+                     , data-default
+                     , directory
+                     , exceptions
+                     , http-client
+                     , http-conduit
+                     , http-media
+                     , http-types
+                     , mtl
+                     , optparse-applicative
+                     , pretty-show
+                     , resourcet
+                     , servant
+                     , servant-client
+                     , text
+                     , transformers
+                     , yaml
+                       -- bundled versions
+                     , lagoon-interface
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  default-extensions:  BangPatterns
+                       DataKinds
+                       DefaultSignatures
+                       DeriveGeneric
+                       FlexibleContexts
+                       FlexibleInstances
+                       FunctionalDependencies
+                       InstanceSigs
+                       MultiParamTypeClasses
+                       NoMonomorphismRestriction
+                       RankNTypes
+                       RecordWildCards
+                       ScopedTypeVariables
+                       TypeFamilies
+                       TypeOperators
+  other-extensions:    OverloadedStrings
+                       UndecidableInstances
+  ghc-options:         -Wall
+                       -rtsopts

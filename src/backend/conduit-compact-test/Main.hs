@@ -7,7 +7,7 @@ import Data.Conduit
 import Control.Monad
 import Test.QuickCheck
 import qualified Data.List.NonEmpty as NE
-import Pfizer.Datalake.Util.Conduit
+import Lagoon.Util.Conduit
 import qualified Data.Conduit.List as CL
 
 import Test.Hspec.QuickCheck (modifyMaxSize)

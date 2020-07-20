@@ -1,9 +1,9 @@
-# Datalake configuration files
+# Lagoon configuration files
 
-In addition to the various command line options described on the `--help` pages for datalake-server and the command line client, each of
+In addition to the various command line options described on the `--help` pages for lagoon-server and the command line client, each of
 these tools also accepts a yaml configuration file via a `--config <config.yaml>` argument.  Examples can be found in [docker/examples](../docker/examples). To use a config file in one of the provided docker images, simply mount it to the container.
 
-### datalake-server
+### lagoon-server
 ```yaml
 # Postgres connection info
 pgdatabase: postgres
@@ -13,17 +13,17 @@ pgport: 5432
 pguser: postgres
 pgschema: demo
 
-# For the docker image only, the datalake admin password may be specified as follows
-dbadminpassword: datalakepassword
+# For the docker image only, the lagoon admin password may be specified as follows
+dbadminpassword: lagoonpassword
 ```
 
 
-### datalake-cmdline / datalake-client
+### lagoon-cmdline / lagoon-client
 ```yaml
-dlserver_host: localhost
-dlserver_port: 1234
+lagoonserver_host: localhost
+lagoonserver_port: 1234
 # Connect using https?
-dlserver_secure: False
-# Verify certificate. Only applicable if dlserver_secure is set to True.
-dlserver_verify_cert: False
+lagoonserver_secure: False
+# Verify certificate. Only applicable if lagoonserver_secure is set to True.
+lagoonserver_verify_cert: False
 ```

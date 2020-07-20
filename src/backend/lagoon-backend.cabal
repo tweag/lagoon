@@ -1,0 +1,162 @@
+name:                lagoon-backend
+version:             0.1.0
+license:             AllRightsReserved
+author:              Edsko de Vries
+maintainer:          edsko@well-typed.com
+copyright:           (c) 2016 Pfizer, Inc
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  exposed-modules:     Lagoon.Ingest
+                       Lagoon.Download
+                       Lagoon.Auth
+                       Lagoon.DB
+                       Lagoon.DB.ColumnSpec
+                       Lagoon.DB.DumpInfo
+                       Lagoon.DB.IfNotFound
+                       Lagoon.DB.Indices
+                       Lagoon.DB.InitReset
+                       Lagoon.DB.Meta
+                       Lagoon.DB.Migration
+                       Lagoon.DB.Orphans
+                       Lagoon.DB.Passwords
+                       Lagoon.DB.Schema
+                       Lagoon.DB.Security
+                       Lagoon.DB.SensibleNames
+                       Lagoon.DB.SourceInfo
+                       Lagoon.DB.SourceNames
+                       Lagoon.DB.Sources
+                       Lagoon.DB.Tags
+                       Lagoon.DB.Typed
+                       Lagoon.DB.UserQuery
+                       Lagoon.DB.Users
+                       Lagoon.FriendlyException.Orphans
+                       Lagoon.Ingest.DataFormat
+                       Lagoon.Ingest.JSON.TypeInference
+                       Lagoon.Ingest.Progress
+                       Lagoon.Ingest.Stream
+                       Lagoon.Ingest.Tabular.InferFieldType
+                       Lagoon.Ingest.Tabular.TypeInference
+                       Lagoon.Ingest.Tabular.UntypedRecord
+                       Lagoon.Ingest.TypeUniverse
+                       Lagoon.ManageDb
+                       Lagoon.Util
+                       Lagoon.Util.Conduit
+                       Lagoon.Util.Exception
+                       Lagoon.Util.JSON
+                       Lagoon.Util.JSON.Context
+                       Lagoon.Util.JSON.Errors
+                       Lagoon.Util.JSON.Lexer
+                       Lagoon.Util.JSON.Stream
+                       Lagoon.Util.JSON.Token
+                       Lagoon.Util.JSON.TopLevel
+                       Lagoon.Util.Logging
+                       Lagoon.Util.PostgreSQL
+                       Lagoon.Util.PostgreSQL.CopyFrom
+                       Lagoon.Util.PostgreSQL.CopyTo
+                       Lagoon.Util.PostgreSQL.Exception
+                       Lagoon.Util.PostgreSQL.HList
+                       Lagoon.Util.PostgreSQL.Keywords
+                       Lagoon.Util.PostgreSQL.PartialQuery
+                       Lagoon.Util.PostgreSQL.Queries
+                       Lagoon.Util.PostgreSQL.QueryPlan
+                       Lagoon.Util.PostgreSQL.Quoted
+                       Lagoon.Util.PostgreSQL.Reserved
+                       Lagoon.Util.PostgreSQL.Schema
+                       Lagoon.Util.PostgreSQL.Schema.SqlEntity
+                       Lagoon.Util.PostgreSQL.Schema.SqlFun
+                       Lagoon.Util.PostgreSQL.Schema.SqlIndex
+                       Lagoon.Util.PostgreSQL.Schema.SqlTable
+                       Lagoon.Util.PostgreSQL.Schema.SqlTrigger
+                       Lagoon.Util.PostgreSQL.Schema.SqlType
+                       Lagoon.Util.PostgreSQL.Settings
+                       Lagoon.Util.PostgreSQL.Transaction
+                       Lagoon.Util.PostgreSQL.TsQuery
+                       Lagoon.Util.StrictList
+                       Lagoon.Verified
+  build-depends:       base
+                     , aeson
+                     , aws
+                     , array
+                     , bcrypt
+                     , bytestring
+                     , conduit
+                     , conduit-combinators
+                     , containers
+                     , data-default
+                     , directory
+                     , exceptions
+                     , filepath
+                     , hashable
+                     , http-client
+                     , http-conduit
+                     , http-types
+                     , unliftio-core
+                     , mtl
+                     , network-uri
+                     , optparse-applicative
+                     , parsec
+                     , path
+                     , postgresql-simple
+                     , pretty
+                     , pretty-show
+                     , resourcet
+                     , temporary
+                     , text
+                     , time
+                     , transformers
+                     , transformers-base
+                     , unix-compat
+                     , unordered-containers
+                     , uri-encode
+                     , utf8-string
+                     , vector
+                     , yaml
+                     , zip
+                     , csv-conduit
+                       -- Use bundled version:
+                     , lagoon-interface
+  build-tools:         alex
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+  default-extensions:  BangPatterns
+                       ConstraintKinds
+                       DefaultSignatures
+                       DeriveGeneric
+                       FlexibleContexts
+                       FlexibleInstances
+                       FunctionalDependencies
+                       GADTs
+                       ImplicitParams
+                       InstanceSigs
+                       KindSignatures
+                       LambdaCase
+                       MultiParamTypeClasses
+                       MultiWayIf
+                       NamedFieldPuns
+                       NoMonomorphismRestriction
+                       RankNTypes
+                       RecordWildCards
+                       ScopedTypeVariables
+                       StandaloneDeriving
+                       TupleSections
+                       TypeFamilies
+                       TypeOperators
+                       ViewPatterns
+  other-extensions:    CPP
+                       DeriveFunctor
+                       GeneralizedNewtypeDeriving
+                       OverloadedStrings
+                       UndecidableInstances
+  ghc-options:         -Wall
+
+test-suite conduit-compact-test
+  main-is: ./conduit-compact-test/Main.hs
+  type: exitcode-stdio-1.0
+  build-depends:
+            lagoon-backend
+          , base
+          , hspec
+          , conduit
+          , QuickCheck

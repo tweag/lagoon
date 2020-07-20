@@ -1,22 +1,22 @@
-# Datalake Backend
+# Lagoon Backend
 
-The Datalake backend library implements the bulk of the functionality of both
-the ingest command line tool and the Datalake web server. It provides the
+The Lagoon backend library implements the bulk of the functionality of both
+the ingest command line tool and the Lagoon web server. It provides the
 following functionality:
 
 * Database initialization
-  ([`Pfizer.Datalake.DB.InitReset`](src/Pfizer/Datalake/DB/InitReset.hs))
+  ([`Lagoon.DB.InitReset`](src/Pfizer/Lagoon/DB/InitReset.hs))
   and migration
-  ([`Pfizer.Datalake.DB.Migration`](src/Pfizer/Datalake/DB/Migration.hs)),
+  ([`Lagoon.DB.Migration`](src/Pfizer/Lagoon/DB/Migration.hs)),
   supported by a definition of the database schema
-  ([`Pfizer.Datalake.DB.Schema`](src/Pfizer/Datalake/DB/Schema.hs))
+  ([`Lagoon.DB.Schema`](src/Pfizer/Lagoon/DB/Schema.hs))
 * Data discovery
-  ([`Pfizer.Datalake.DB.SourceInfo`](src/Pfizer/Datalake/DB/SourceInfo.hs))
-* Data ingest ([`Pfizer.Datalake.Ingest`](src/Pfizer/Datalake/Ingest.hs))
+  ([`Lagoon.DB.SourceInfo`](src/Pfizer/Lagoon/DB/SourceInfo.hs))
+* Data ingest ([`Lagoon.Ingest`](src/Pfizer/Lagoon/Ingest.hs))
 
 ## Getting Started
 
-Module [`Pfizer.Datalake.Ingest.Prog`](src/Pfizer/Datalake/Ingest/Prog.hs)
+Module [`Lagoon.Ingest.Prog`](src/Pfizer/Lagoon/Ingest/Prog.hs)
 defines a very simple EDSL called `Prog`, which serves as a type-checked
 specification of the interface provided by the backend library. This datatype
 along with its interpreter `runProg` are good starting points for getting to
@@ -27,24 +27,24 @@ tool is defined entirely in terms of `Prog`.
 
 A significant part of the backend library is concerned with ingesting new data
 sources. The main module
-[`Pfizer.Datalake.Ingest`](src/Pfizer/Datalake/Ingest.hs) deals with the
+[`Lagoon.Ingest`](src/Pfizer/Lagoon/Ingest.hs) deals with the
 top-level flow of data, different sources (remote source, local source, ZIPed
 source, etc.) as well as text encodings. It is supported by a number of
 additional modules:
 
-* [`Pfizer.Datalake.Util.PostgreSQL.CopyTo`](src/Pfizer/Datalake/Util/PostgreSQL/CopyTo.hs) provides a high-level [`conduit`](http://hackage.haskell.org/package/conduit)-based interface to PostgreSQL's COPY IN protocol.
-* [`Pfizer.Datalake.Ingest.Tabular.TypeInference`](src/Pfizer/Datalake/Ingest/Tabular/TypeInference.hs) implements type inference for CSV/TSV files; the core functionality is implemented as an [`alex`](https://www.haskell.org/alex/) lexer in [`Pfizer.Datalake.Ingest.Tabular.InferFieldType`](src/Pfizer/Datalake/Ingest/Tabular/InferFieldType.x)
-* [`Pfizer.Datalake.Ingest.JSON.TypeInference`](src/Pfizer/Datalake/Ingest/JSON/TypeInference.hs) implements type inference for JSON files. [src/Pfizer/Datalake/Ingest/JSON/README.md](src/Pfizer/Datalake/Ingest/JSON/README.md) for more information about the type system used.
+* [`Lagoon.Util.PostgreSQL.CopyTo`](src/Pfizer/Lagoon/Util/PostgreSQL/CopyTo.hs) provides a high-level [`conduit`](http://hackage.haskell.org/package/conduit)-based interface to PostgreSQL's COPY IN protocol.
+* [`Lagoon.Ingest.Tabular.TypeInference`](src/Pfizer/Lagoon/Ingest/Tabular/TypeInference.hs) implements type inference for CSV/TSV files; the core functionality is implemented as an [`alex`](https://www.haskell.org/alex/) lexer in [`Lagoon.Ingest.Tabular.InferFieldType`](src/Pfizer/Lagoon/Ingest/Tabular/InferFieldType.x)
+* [`Lagoon.Ingest.JSON.TypeInference`](src/Pfizer/Lagoon/Ingest/JSON/TypeInference.hs) implements type inference for JSON files. [src/Pfizer/Lagoon/Ingest/JSON/README.md](src/Pfizer/Lagoon/Ingest/JSON/README.md) for more information about the type system used.
 
 ## Generic functionality
 
 A relatively large part of the backend library is generic (not
-Datalake-specific). We describe the most important parts here.
+Lagoon-specific). We describe the most important parts here.
 
 ### JSON support
 
 JSON type inference as well as ingesting JSON sources is supported by a JSON
-library with top-level entry point [`Pfizer.Datalake.Util.JSON`](src/Pfizer/Datalake/Util/JSON.hs). Crucially,
+library with top-level entry point [`Lagoon.Util.JSON`](src/Pfizer/Lagoon/Util/JSON.hs). Crucially,
 this provides `conduit`-based constant-space processing of JSON files (the JSON
 type inference mentioned above is just a thin layer on top of this library).
 Apart from type inference, this library is used to extract multiple values
@@ -57,14 +57,14 @@ To interact with PostgreSQL we use the `postgresql-simple` library. We
 evaluated other choices, most notably [`hasql`](http://hackage.haskell.org/package/hasql), but rejected `hasql`
 because of a lack of support for the COPY protocol.
 
-Nonetheless, `postgresql-simple` is a relatively low-level API and so the [`Pfizer.Datalake.Util.PostgreSQL`](src/Pfizer/Datalake/Util/PostgreSQL.hs)
+Nonetheless, `postgresql-simple` is a relatively low-level API and so the [`Lagoon.Util.PostgreSQL`](src/Pfizer/Lagoon/Util/PostgreSQL.hs)
 and related submodules provide a higher-level interface on top.
 
-The most pervasive abstraction is  [`Pfizer.Datalake.Util.PostgreSQL.Transaction`](src/Pfizer/Datalake/Util/PostgreSQL/Transaction.hs). This implements a `Transaction` monad, a thin wrapper around the IO or an IO-like monad. It serves two purposes: it clearly delineates SQL transactions at the type-level (`runTransaction` brackets with `BEGIN` and `COMMIT` or `ABORT`), and it adds a `Reader` environment both for the database `Connection` and the global `Schema` we're using for the `Datalake` metadata so that we don't have to explicitly pass these two values around everywhere.
+The most pervasive abstraction is  [`Lagoon.Util.PostgreSQL.Transaction`](src/Pfizer/Lagoon/Util/PostgreSQL/Transaction.hs). This implements a `Transaction` monad, a thin wrapper around the IO or an IO-like monad. It serves two purposes: it clearly delineates SQL transactions at the type-level (`runTransaction` brackets with `BEGIN` and `COMMIT` or `ABORT`), and it adds a `Reader` environment both for the database `Connection` and the global `Schema` we're using for the `Lagoon` metadata so that we don't have to explicitly pass these two values around everywhere.
 
 We also provide some Haskell datatypes that correspond to SQL entities such
-as tables, functions, triggers, etc. These datatypes are defined in `Pfizer.Datalake.Util.PostgreSQL.Schema.*`. Some of these are reified to a
-larger extent than others; for instance, [`Pfizer.Datalake.Util.PostgreSQL.Schema.SqlTable`](src/Pfizer/Datalake/Util/PostgreSQL/Schema/SqlTable.hs) is nothing more than a name and a `CREATE TABLE` statement, whereas others such as [`Pfizer.Datalake.Util.PostgreSQL.Schema.SqlFun`](src/Pfizer/Datalake/Util/PostgreSQL/Schema/SqlFun.hs) carry considerably more structure. This is not intended as a general purpose `postgresql-simple` wrapper (although it could eventually turn into one), but is instead driven by specific needs in the Datalake code base.
+as tables, functions, triggers, etc. These datatypes are defined in `Lagoon.Util.PostgreSQL.Schema.*`. Some of these are reified to a
+larger extent than others; for instance, [`Lagoon.Util.PostgreSQL.Schema.SqlTable`](src/Pfizer/Lagoon/Util/PostgreSQL/Schema/SqlTable.hs) is nothing more than a name and a `CREATE TABLE` statement, whereas others such as [`Lagoon.Util.PostgreSQL.Schema.SqlFun`](src/Pfizer/Lagoon/Util/PostgreSQL/Schema/SqlFun.hs) carry considerably more structure. This is not intended as a general purpose `postgresql-simple` wrapper (although it could eventually turn into one), but is instead driven by specific needs in the Lagoon code base.
 
 The library provides quite a lot of other functionality besides from the beforementioned, but they are more specialized and can probably be understood
 in isolation when needed.

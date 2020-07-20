@@ -6,12 +6,12 @@ services:
         POSTGRES_PASSWORD: mysecretpassword
     ports:
       - "5432:5432"
-  datalake-server:
-    image: datalake-server:latest
+  lagoon-server:
+    image: lagoon-server:latest
     depends_on:
         - postgres
     volumes:
-        - ${PWD}/examples/datalake-server.yaml:/datalake-server.yaml
+        - ${PWD}/examples/lagoon-server.yaml:/lagoon-server.yaml
     command: 
         - '--dummy-auth'
         - '--port'

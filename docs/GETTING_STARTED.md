@@ -2,15 +2,15 @@
 
 ### Overview
 
-Datalake consists of a server application, datalake-server, which uses a Postgres database as its backend.  To get started
+Lagoon consists of a server application, lagoon-server, which uses a Postgres database as its backend.  To get started
 we'll need to:
 1. Set up a Postgres instance
-2. Initialize the database using the datalake-server CLI
-3. Start running datalake
+2. Initialize the database using the lagoon-server CLI
+3. Start running lagoon
 
 After that we'll be able to start adding and querying data using one of the client libraries.
 
-> This guide will use [docker](https://docs.docker.com/get-docker/) for running some of the datalake components.
+> This guide will use [docker](https://docs.docker.com/get-docker/) for running some of the lagoon components.
 
 
 ### Postgres database setup
@@ -19,44 +19,44 @@ For a quick and easy way to run Postgres, we can use the postgres image availabl
 First we'll need to start our instance, making note of the postgres admin credentials and port:
 
 ```
-docker run -p 5432:5432 --name datalake-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+docker run -p 5432:5432 --name lagoon-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
 ```
 
-Datalake also requires the pg_trgm extension to be enabled:
+Lagoon also requires the pg_trgm extension to be enabled:
 ```
-docker exec datalake-postgres psql --username postgres -w --dbname postgres --command 'CREATE extension IF NOT EXISTS pg_trgm;'
+docker exec lagoon-postgres psql --username postgres -w --dbname postgres --command 'CREATE extension IF NOT EXISTS pg_trgm;'
 ```
 
-### Datalake backend initialization
-Now that the database is running, we can initialize the datalake backend. For this example, we'll be using the docker images provided at [TODO](). You can
-also follow along using the datalake-server executable built with nix (see the [README]((../README.md)) for more details).
+### Lagoon backend initialization
+Now that the database is running, we can initialize the lagoon backend. For this example, we'll be using the docker images provided at [TODO](). You can
+also follow along using the lagoon-server executable built with nix (see the [README]((../README.md)) for more details).
 
 TODO: confirm this image path
 ```
-docker run --rm tweag/datalake-server --pghost localhost --pgport 5432 --pguser postgres --pgpassword mysecretpassword init-db --db-admin-pass datalakepassword
+docker run --rm tweag/lagoon-server --pghost localhost --pgport 5432 --pguser postgres --pgpassword mysecretpassword init-db --db-admin-pass lagoonpassword
 ```
 
-### Run the datalake server
+### Run the lagoon server
 
-Now that datalake's backend tables are generated, we're ready to run the server:
+Now that lagoon's backend tables are generated, we're ready to run the server:
 ```
-docker run --name datalake-server -p 22089:22089 tweag/datalake-server --pghost localhost --pgport 5432 --pguser postgres --pgpassword mysecretpassword
+docker run --name lagoon-server -p 22089:22089 tweag/lagoon-server --pghost localhost --pgport 5432 --pguser postgres --pgpassword mysecretpassword
 ```
-> Note: 22089 is the default port for datalake-server
+> Note: 22089 is the default port for lagoon-server
 
-And with that, an instance of datalake is running locally on port 22089 and is ready to accept and serve data via one of the client libraries.
+And with that, an instance of lagoon is running locally on port 22089 and is ready to accept and serve data via one of the client libraries.
 
 ### Adding and querying data
 
-Data can be loaded to datalake using any of the client libraries. For this example, we'll use the command line client which is also available as a docker image. 
+Data can be loaded to lagoon using any of the client libraries. For this example, we'll use the command line client which is also available as a docker image. 
 
-> Note: to run sql queries you'll want to use one of the language-specific libraries (e.g. PyDatalake).
+> Note: to run sql queries you'll want to use one of the language-specific libraries (e.g. PyLagoon).
 
 First we'll need to create a user:
 
 ```
 # Create a user called 'myname' with a default empty password
-docker run --rm tweag/datalake-client manage-user --create-user myname --db-admin-pass datalakepassword
+docker run --rm tweag/lagoon-client manage-user --create-user myname --db-admin-pass lagoonpassword
 ```
 
 Then we can create a simple json dataset and ingest it:
@@ -64,7 +64,7 @@ Then we can create a simple json dataset and ingest it:
 ```console
 $ echo '{"place": "Switzerland", "transaction": 100.00, "items": ["chocolate", "wine"]}' > demo.json
 
-$ docker run --rm tweag/datalake-client ingest --user myname --pass '' --name things_purchased --json demo.json
+$ docker run --rm tweag/lagoon-client ingest --user myname --pass '' --name things_purchased --json demo.json
 
     Starting ingest proper
     Processed 1 records
@@ -94,7 +94,7 @@ We can also create a new version of this dataset and load it:
 ```console
 $ echo '{"place": "Switzerland", "transaction": 10.00, "items": ["cheese"]}' > demo.json
 
-$ docker run --rm tweag/datalake-client ingest --user myname --pass '' --name things_purchased --json demo.json
+$ docker run --rm tweag/lagoon-client ingest --user myname --pass '' --name things_purchased --json demo.json
 
     things_purchased (version 2)
     URL         (local)
@@ -116,7 +116,7 @@ $ docker run --rm tweag/datalake-client ingest --user myname --pass '' --name th
 And finally, we can download one of the generations of our dataset. For example, let's download the first version:
 
 ```console
-$ docker run --rm tweag/datalake-client download --user myname --pass '' -v 1 things_purchased
+$ docker run --rm tweag/lagoon-client download --user myname --pass '' -v 1 things_purchased
 
 {"items": ["chocolate", "wine"], "place": "Switzerland", "transaction": 100.00}
 ```

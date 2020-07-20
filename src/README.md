@@ -1,6 +1,6 @@
 # src
 
-Datalake Haskell libraries
+Lagoon Haskell libraries
 
 ## Contents
 

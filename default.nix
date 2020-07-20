@@ -3,17 +3,17 @@ let
 in
   {
     inherit (pkgs)
-      datalakeDocker
-      pydatalakeTarGz
-      rubydatalake
+      lagoonDocker
+      pylagoonTarGz
+      rubylagoon
       # TODO - This isn't working
-      rubydatalake-tests
-      rubydatalakegem
+      rubylagoon-tests
+      rubylagoongem
       ;
     inherit (pkgs.haskellPackages)
-      datalake-server
-      datalake-cmdline
+      lagoon-server
+      lagoon-cmdline
       ;
-    inherit (pkgs.pythonPackages) pydatalake;
-    inherit (pkgs.rPackages) rdatalake;
-  } // pkgs.datalake-tests # TODO - These tests are also broken after refactor
+    inherit (pkgs.pythonPackages) pylagoon;
+    inherit (pkgs.rPackages) rlagoon;
+  } // pkgs.lagoon-tests # TODO - These tests are also broken after refactor

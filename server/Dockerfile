@@ -1,8 +1,8 @@
-FROM tweag/datalake
+FROM tweag/lagoon
 
 RUN mkdir -p /app
 
-ADD docker-build/datalake-server docker-boot-server.sh /app/
+ADD docker-build/lagoon-server docker-boot-server.sh /app/
 
 EXPOSE 1234
 

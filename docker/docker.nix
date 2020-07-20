@@ -4,8 +4,8 @@
 , bash
 , bashInteractive
 , coreutils
-, datalake-server
-, datalake-cmdline
+, lagoon-server
+, lagoon-cmdline
 , postgresql
 , netcat-gnu
 , bind
@@ -20,24 +20,24 @@ rec {
     #!${stdenv.shell}
     set -e
 
-    if [ ! -f "$DLSERVER_CONFIG" ]; then
-        echo "No datalake server config file found at $DLSERVER_CONFIG. Please mount one to the container."
+    if [ ! -f "$LAGOONSERVER_CONFIG" ]; then
+        echo "No lagoon server config file found at $LAGOONSERVER_CONFIG. Please mount one to the container."
         exit 1
     fi
 
     # Extract postgres connection parameters
-    export PGHOST="$(yq --raw-output .pghost "$DLSERVER_CONFIG")"
-    export PGPORT="$(yq --raw-output .pgport "$DLSERVER_CONFIG")"
-    export PGUSER="$(yq --raw-output .pguser "$DLSERVER_CONFIG")"
-    export PGDATABASE="$(yq --raw-output .pgdatabase "$DLSERVER_CONFIG")"
+    export PGHOST="$(yq --raw-output .pghost "$LAGOONSERVER_CONFIG")"
+    export PGPORT="$(yq --raw-output .pgport "$LAGOONSERVER_CONFIG")"
+    export PGUSER="$(yq --raw-output .pguser "$LAGOONSERVER_CONFIG")"
+    export PGDATABASE="$(yq --raw-output .pgdatabase "$LAGOONSERVER_CONFIG")"
 
     # Materialize connection info for PSQL commands
     export PGPASSFILE="/.pgpass"
     trap 'sc="$?"; rm -f "$PGPASSFILE"; exit $sc' EXIT
-    echo "$PGHOST:$PGPORT:$PGDATABASE:$PGUSER:$(yq --raw-output .pgpassword "$DLSERVER_CONFIG")" > "$PGPASSFILE"
+    echo "$PGHOST:$PGPORT:$PGDATABASE:$PGUSER:$(yq --raw-output .pgpassword "$LAGOONSERVER_CONFIG")" > "$PGPASSFILE"
     chmod 0600 "$PGPASSFILE"
 
-    pg_user="$(yq --raw-output .pguser "$DLSERVER_CONFIG")"
+    pg_user="$(yq --raw-output .pguser "$LAGOONSERVER_CONFIG")"
     # Wait for postgres server to be available
     x=1
     while ! $PSQL -w -c "SELECT NOW() ;"; do
@@ -49,30 +49,30 @@ rec {
 
     echo "Initializing database"
     $PSQL -w -c 'CREATE extension IF NOT EXISTS pg_trgm;'
-    $PSQL -w -c "CREATE SCHEMA IF NOT EXISTS \"$(yq --raw-output .pgschema "$DLSERVER_CONFIG")\" AUTHORIZATION $(yq --raw-output .pguser "$DLSERVER_CONFIG");"
+    $PSQL -w -c "CREATE SCHEMA IF NOT EXISTS \"$(yq --raw-output .pgschema "$LAGOONSERVER_CONFIG")\" AUTHORIZATION $(yq --raw-output .pguser "$LAGOONSERVER_CONFIG");"
 
     # Now that we're done with initilization, we can delete the psql conn. file
     rm -f "$PGPASSFILE"
 
-    export PATH="${datalake-server}/bin:$PATH"
+    export PATH="${lagoon-server}/bin:$PATH"
 
     # Allow this to fail as the database may already be initialized
     # TODO - db-admin-pass can only be read from a string!!! and not stdin. Let's change this... 
-    datalake-server --config "$DLSERVER_CONFIG" init-db --db-admin-pass "$(yq --raw-output .dbadminpassword "$DLSERVER_CONFIG")" || true
+    lagoon-server --config "$LAGOONSERVER_CONFIG" init-db --db-admin-pass "$(yq --raw-output .dbadminpassword "$LAGOONSERVER_CONFIG")" || true
 
-    echo "Starting the datalake server"    
-    datalake-server --config $DLSERVER_CONFIG $@
+    echo "Starting the lagoon server"    
+    lagoon-server --config $LAGOONSERVER_CONFIG $@
   '';
 
   entrypoint-client = writeScriptBin "entrypoint-client" ''
     #!${stdenv.shell}
     set -e
-    export PATH="${datalake-cmdline}/bin:$PATH"
-    datalake $@
+    export PATH="${lagoon-cmdline}/bin:$PATH"
+    lagoon $@
   '';
 
   server = dockerTools.buildImage {
-    name = "datalake-server";
+    name = "lagoon-server";
     tag = "latest";
     contents = [ bashInteractive coreutils netcat-gnu bind.host nettools iana-etc cacert yq ];
     config = {
@@ -83,14 +83,14 @@ rec {
       };
       Env = [
           "PSQL=${postgresql}/bin/psql"
-          "DLSERVER_PORT=1234"
-          "DLSERVER_CONFIG=/datalake-server.yaml"
+          "LAGOONSERVER_PORT=1234"
+          "LAGOONSERVER_CONFIG=/lagoon-server.yaml"
       ];
     };
   };
 
   client = dockerTools.buildImage {
-    name = "datalake-client";
+    name = "lagoon-client";
     tag = "latest";
     contents = [ bashInteractive coreutils netcat-gnu bind.host nettools iana-etc cacert yq ];
     config = {

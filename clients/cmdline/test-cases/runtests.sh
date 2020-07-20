@@ -94,7 +94,7 @@ ${GO} ${RTSOPTS} ingest -u edsko -p '' --created "${TEST_DATE}"  \
 ## Run tests from the tests/ directory
 ##
 
-for i in ${DATALAKE_TEST_DIR}/tests/*
+for i in ${LAGOON_TEST_DIR}/tests/*
 do
   bn=`basename $i`
   ${GO} ingest -u edsko -p '' --created "${TEST_DATE}" -n "$bn" "$i"
@@ -112,21 +112,21 @@ done
 
 ${GO} dump-db-info --db-admin-pass '' > dbinfo.actual
 
-diff -b dbinfo.actual ${DATALAKE_TEST_DIR}/dbinfo.expected
+diff -b dbinfo.actual ${LAGOON_TEST_DIR}/dbinfo.expected
 
 ##
 ## Make sure sources can be deleted one by one.
 ##
-## We ingest some sources, then delete them one by one. The datalake's state
+## We ingest some sources, then delete them one by one. The lagoon's state
 ## should be as if unchagned.
 ##
 
 ${GO} ingest -u edsko -p '' --created "${TEST_DATE}" -n "to_be_deleted" \
-    "${DATALAKE_TEST_DIR}/tests/078_3a.csv"
+    "${LAGOON_TEST_DIR}/tests/078_3a.csv"
 ${GO} ingest -u edsko -p '' --created "${TEST_DATE}" -n "to_be_deleted" \
-    "${DATALAKE_TEST_DIR}/tests/078_3a.csv"
+    "${LAGOON_TEST_DIR}/tests/078_3a.csv"
 ${GO} ingest -u edsko -p '' --created "${TEST_DATE}" -n "to_be_deleted" \
-    "${DATALAKE_TEST_DIR}/tests/078_3a.csv"
+    "${LAGOON_TEST_DIR}/tests/078_3a.csv"
 
 ${GO} delete-source -u esdko -p '' "to_be_deleted" -v 1
 ${GO} delete-source -u esdko -p '' "to_be_deleted" -v 2
@@ -134,27 +134,27 @@ ${GO} delete-source -u esdko -p '' "to_be_deleted" -v 3
 
 ${GO} dump-db-info --db-admin-pass '' > dbinfo.actual
 
-diff -b dbinfo.actual ${DATALAKE_TEST_DIR}/dbinfo.expected
+diff -b dbinfo.actual ${LAGOON_TEST_DIR}/dbinfo.expected
 
 ##
 ## Make sure sources can be deleted one by one.
 ##
-## We ingest some sources, then delete all versions at once. The datalake's
+## We ingest some sources, then delete all versions at once. The lagoon's
 ## state should be as if unchagned.
 ##
 
 ${GO} ingest -u edsko -p '' --created "${TEST_DATE}" -n "to_be_deleted" \
-    "${DATALAKE_TEST_DIR}/tests/078_3a.csv"
+    "${LAGOON_TEST_DIR}/tests/078_3a.csv"
 ${GO} ingest -u edsko -p '' --created "${TEST_DATE}" -n "to_be_deleted" \
-    "${DATALAKE_TEST_DIR}/tests/078_3a.csv"
+    "${LAGOON_TEST_DIR}/tests/078_3a.csv"
 ${GO} ingest -u edsko -p '' --created "${TEST_DATE}" -n "to_be_deleted" \
-    "${DATALAKE_TEST_DIR}/tests/078_3a.csv"
+    "${LAGOON_TEST_DIR}/tests/078_3a.csv"
 
 ${GO} delete-source -u esdko -p '' "to_be_deleted"
 
 ${GO} dump-db-info --db-admin-pass '' > dbinfo.actual
 
-diff -b dbinfo.actual ${DATALAKE_TEST_DIR}/dbinfo.expected
+diff -b dbinfo.actual ${LAGOON_TEST_DIR}/dbinfo.expected
 
 ##
 ## Check that we can download a JSON file that we previously ingested,
@@ -165,7 +165,7 @@ diff -b dbinfo.actual ${DATALAKE_TEST_DIR}/dbinfo.expected
 ## works properly.
 ##
 
-${GO} download -u edsko -p '' 086_json_escape.json | diff ${DATALAKE_TEST_DIR}/tests/086_json_escape.json -
+${GO} download -u edsko -p '' 086_json_escape.json | diff ${LAGOON_TEST_DIR}/tests/086_json_escape.json -
 
 ##
 ## If we get this far, everything is OK

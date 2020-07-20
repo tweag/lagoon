@@ -11,12 +11,12 @@ if [ -z "${PGPORT}" ]; then
   exit 1
 fi
 
-# Datalake server configuration
-DLSERVER_PORT=${DLSERVER_PORT:-22089}
+# Lagoon server configuration
+LAGOONSERVER_PORT=${LAGOONSERVER_PORT:-22089}
 
 # PostgreSQL configuration
-PGUSER=${PGUSER:-dlserver}
-PGPASSWORD=${PGPASSWORD:-dlserver}
+PGUSER=${PGUSER:-lagoonserver}
+PGPASSWORD=${PGPASSWORD:-lagoonserver}
 PGDATABASE=${PGDATABASE:-pfizer}
 PGSCHEMA=${PGSCHEMA:-public}
 
@@ -40,10 +40,10 @@ psql -U ${PGUSER} -h ${PGHOST} -p ${PGPORT} "${PGDATABASE}" -c 'CREATE extension
 psql -U ${PGUSER} -h ${PGHOST} -p ${PGPORT} "${PGDATABASE}" -c "CREATE SCHEMA IF NOT EXISTS \"${PGSCHEMA}\" AUTHORIZATION ${PGUSER};"
 
 # Allow this to fail as the database may already be initialized
-/app/datalake-server ${pg_options} init-db --db-admin-pass '' || true
+/app/lagoon-server ${pg_options} init-db --db-admin-pass '' || true
 
-echo "Starting datalake server"
-/app/datalake-server ${pg_options} --port ${DLSERVER_PORT} --dummy-auth ${DLSERVER_EXTRA_ARGS} &
+echo "Starting lagoon server"
+/app/lagoon-server ${pg_options} --port ${LAGOONSERVER_PORT} --dummy-auth ${LAGOONSERVER_EXTRA_ARGS} &
 server_pid=$!
 
 wait $server_pid
