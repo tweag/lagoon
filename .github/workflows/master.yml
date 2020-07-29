@@ -34,11 +34,7 @@ jobs:
         nix-build -A lagoonDocker.server -o "lagoon-server-${{ steps.vars.outputs.sha_short }}.tar.gz"
         nix-build -A lagoonDocker.client -o "lagoon-client-${{ steps.vars.outputs.sha_short }}.tar.gz"
     - name: Login to docker
-      uses: azure/docker-login@v1
-      with:
-        login-server: index.docker.io
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
+      run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
     - name: Load and tag docker images
       run: |
         docker load < "lagoon-server-${{ steps.vars.outputs.sha_short }}.tar.gz"
