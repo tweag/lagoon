@@ -27,7 +27,7 @@ For convenience, Lagoon also includes client libraries for interacting with its 
 
 ### Docker
 
-Pre-built docker images containing the lagoon server and CLI may be found on [DockerHub](TODO). Simply pull one of the images there and follow the [configuration guide](docs/CONFIG.md) to get started.
+Pre-built docker images containing the lagoon server and CLI may be found on [DockerHub](https://hub.docker.com/u/tweag). Simply pull one of the images there and follow the [configuration guide](docs/CONFIG.md) to get started.
 
 ### From source
 

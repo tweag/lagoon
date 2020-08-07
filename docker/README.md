@@ -1,6 +1,6 @@
 # docker
 
-Since this project uses nix for packaging, Docker images are generated using nix's dockertools module and are defined as a nix expression in [docker.nix](docker.nix) instead of a traditional Dockerfile.  Docker images for the lagoon server and command line client are available at [TODO - DockerHubLink]().
+Since this project uses nix for packaging, Docker images are generated using nix's dockertools module and are defined as a nix expression in [docker.nix](docker.nix) instead of a traditional Dockerfile.  Docker images for the [lagoon server](https://hub.docker.com/r/tweag/lagoon-server) and [command line client](https://hub.docker.com/r/tweag/lagoon-client) are available on DockerHub.
 
 ### Example
 A [docker-compose file](./docker-compose.yaml) which spins up a local lagoon server is included in this directory along with example config files in [examples/](./examples/).

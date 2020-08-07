@@ -28,10 +28,9 @@ docker exec lagoon-postgres psql --username postgres -w --dbname postgres --comm
 ```
 
 ### Lagoon backend initialization
-Now that the database is running, we can initialize the lagoon backend. For this example, we'll be using the docker images provided at [TODO](). You can
+Now that the database is running, we can initialize the lagoon backend. For this example, we'll be using the docker images provided on the [Tweag DockerHub organization](https://hub.docker.com/u/tweag). You can
 also follow along using the lagoon-server executable built with nix (see the [README]((../README.md)) for more details).
 
-TODO: confirm this image path
 ```
 docker run --rm tweag/lagoon-server --pghost localhost --pgport 5432 --pguser postgres --pgpassword mysecretpassword init-db --db-admin-pass lagoonpassword
 ```
