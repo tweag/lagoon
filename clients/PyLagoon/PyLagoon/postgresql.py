@@ -24,6 +24,7 @@ import psycopg2.extensions as psql_ext
 from PyLagoon.config import LagoonConfig
 from PyLagoon.source import Source
 
+
 class PGMeta:
     """Given a list of Sources, builds the classes necessary
     to the querying EDSL.
@@ -34,7 +35,7 @@ class PGMeta:
         self.__md = sa.MetaData()
         for s in sources:
             self.__add_source_to_md(s)
-        self.__base = automap_base(metadata = self.__md)
+        self.__base = automap_base(metadata=self.__md)
         self.__base.prepare()
 
     @property
@@ -48,8 +49,9 @@ class PGMeta:
         return self.__base.classes[key]
 
     def __sql_column_from_json_column(self, col):
-        typ = col["type"] \
-              .replace(" ", "_").replace("DOCUMENT", "TEXT") # "DOUBLE PRECISION" -> "DOUBLE_PRECISION"
+        typ = (
+            col["type"].replace(" ", "_").replace("DOCUMENT", "TEXT")
+        )  # "DOUBLE PRECISION" -> "DOUBLE_PRECISION"
         subtyp = None
         sql_typ = None
         if isinstance(typ, list):
@@ -66,10 +68,13 @@ class PGMeta:
             return sa.Column(col["inView"], sql_typ)
 
     def __add_source_to_md(self, source):
-        sa.Table(source.view_name, self.__md,
-                 sa.Column("ix", sa.Integer, primary_key=True),
-                 *(self.__sql_column_from_json_column(c)
-                   for c in source.columns))
+        sa.Table(
+            source.view_name,
+            self.__md,
+            sa.Column("ix", sa.Integer, primary_key=True),
+            *(self.__sql_column_from_json_column(c) for c in source.columns.values()),
+            schema=source.schema
+        )
 
     def query(self, *sources):
         """Starts a query on the given sources, which can
@@ -82,9 +87,9 @@ class PGMeta:
 
         if len(sources) == 0:
             sources = self.__view_names
-        return Session().query(*((self[s] if isinstance(s,str) or isinstance(s,Source)
-                                          else s)
-                                 for s in sources))
+        return Session().query(
+            *((self[s] if isinstance(s, str) or isinstance(s, Source) else s) for s in sources)
+        )
 
 
 def build_sql_query(query):
@@ -93,8 +98,8 @@ def build_sql_query(query):
     to the lagoon-server"""
 
     d = psql.dialect()
-    q = query.statement.compile(dialect = d)
-    #The following is not ideal, as q.params and str(q) should
+    q = query.statement.compile(dialect=d)
+    # The following is not ideal, as q.params and str(q) should
     # normally be passed separately to the PostgreSQL database:
     ps = {}
     for k, v in q.params.items():
