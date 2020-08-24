@@ -7,7 +7,7 @@ services:
     ports:
       - "5432:5432"
   lagoon-server:
-    image: lagoon-server:latest
+    image: tweag/lagoon-server:latest
     depends_on:
         - postgres
     volumes:

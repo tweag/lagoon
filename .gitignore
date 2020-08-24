@@ -50,3 +50,6 @@ RubyLagoon/vendor
 .vscode
 
 clients/RLagoon/_libs
+
+# Extra notebook files
+.ipynb_checkpoints

@@ -15,6 +15,7 @@ import requests as req
 import pandas as pd
 import json
 import os.path
+from typing import List
 
 from PyLagoon.config import LagoonConfig
 from PyLagoon.postgresql import PGMeta, build_sql_query
@@ -36,9 +37,10 @@ class Lagoon:
             self.__cookies = self.__connect()
 
     def __connect(self):
-        reply = req.post(self.conn_str + "user/login",
-                         json={"user": self.__cfg.USER,
-                               "pass": self.__cfg.PASSWORD})
+        reply = req.post(
+            self.conn_str + "user/login",
+            json={"user": self.__cfg.USER, "pass": self.__cfg.PASSWORD},
+        )
         if reply.ok:
             return reply.cookies
         else:
@@ -61,9 +63,7 @@ class Lagoon:
             kwargs["tag"] = tags
         if columns:
             kwargs["columns"] = columns
-        reply = req.get(self.conn_str + "sources",
-                        params=kwargs,
-                        cookies=self.__cookies)
+        reply = req.get(self.conn_str + "sources", params=kwargs, cookies=self.__cookies)
         return [Source(j) for j in reply.json()]
 
     def ingest(self, file_path, name, ontoClass=None, tags=None, **kwargs):
@@ -79,12 +79,14 @@ class Lagoon:
             kwargs["tag"] = tags
         kwargs["name"] = name
         kwargs["input"] = os.path.split(file_path)[1]
-                          # So the server can guess the fileType
-        reply = req.post(self.conn_str + "sources",
-                         data=open(file_path, "rb"),
-                         params=kwargs,
-                         stream=True,
-                         cookies=self.__cookies)
+        # So the server can guess the fileType
+        reply = req.post(
+            self.conn_str + "sources",
+            data=open(file_path, "rb"),
+            params=kwargs,
+            stream=True,
+            cookies=self.__cookies,
+        )
         report = (json.loads(line.decode("utf-8")) for line in reply.raw)
         stack = []
         last = None
@@ -116,38 +118,67 @@ class Lagoon:
         reply = req.get(self.conn_str + "users")
         return reply.json()
 
-    def tbl(self, source=None, query=None):
-        """tbl() in RLagoon
-
-        Give one of source or query.
-
-        source is a Source, query is an sqlalchemy.orm.query.Query created
-        through use of PyLagoon.postgresql.PGMeta and the sqlalchemy EDSL.
+    def download_source(self, source):
+        """Constructs a DataFrame containing an entire source
         """
+        is_json = any(c["type"][0] == "JSON" for c in source.columns)
+        if is_json:
+            # We need a JSON document in that case
+            # the sql endpoint will return one
+            meta = PGMeta([source])
+            table = meta[source]
+            return self.__tbl_from_raw_sql(build_sql_query(meta.query(table)))
+        else:
+            reply = req.get(
+                self.conn_str + "source/" + str(source.ix) + "/download",
+                stream=True,
+                cookies=self.__cookies,
+            )
+            if reply.ok:
+                return pd.read_csv(reply.text)
 
-        if source:
-            is_json = any(c["type"][0] == "JSON" for c in source.columns)
-            if is_json:
-                # We need a JSON document in that case
-                # the sql endpoint will return one
-                meta = PGMeta([source])
-                table = meta[source]
-                return self.__tbl_from_raw_sql(build_sql_query(meta.query(table)))
-            else:
-                reply = req.get(self.conn_str + "source/" + str(source.ix) + "/download",
-                                stream=True,
-                                cookies=self.__cookies)
-                if reply.ok:
-                    return pd.read_csv(reply.text)
-        elif query:
-            return self.__tbl_from_raw_sql(build_sql_query(query))
+    def download_query(self, query, sources):
+        """Constructs a DataFrame from a SQLAlchemy query and corresponding sources
 
-    def __tbl_from_raw_sql(self, query):
+        Note that this method will sequentially search for each columns type in the list
+        of sources and take the first match. This is necessary since query results only
+        include column names and not data source identifiers.
+        """
+        return self.__tbl_from_raw_sql(build_sql_query(query), sources)
+
+    def __tbl_from_raw_sql(self, query, sources):
         reply = req.post(
-            self.conn_str + "sql",
-            json={"sql": query},
-            stream=True,
-            cookies=self.__cookies)
-        if reply.ok:
-            # return pd.read_json(reply.raw)
-            return pd.DataFrame(reply.json())
+            self.conn_str + "sql", json={"sql": query}, stream=True, cookies=self.__cookies
+        )
+        reply.raise_for_status()
+        return _query_to_df(reply.json(), sources)
+
+
+def _group_rows(rows: List[dict]):
+    columns = {}
+    for row in rows:
+        for c, v in row.items():
+            if c in columns:
+                columns[c].append(v)
+            else:
+                columns[c] = [v]
+    return columns
+
+
+def _get_dtype(col_name, sources):
+    for source in sources:
+        if col_name in source.col_types:
+            return source.col_types[col_name]
+    return object
+
+
+def _query_to_df(rows, sources):
+    grouped = _group_rows(rows)
+    col_names = list(grouped.keys())
+    series = []
+    for name in col_names:
+        vals = grouped.pop(name)
+        series.append(pd.Series(vals, name=name, dtype=_get_dtype(name, sources)))
+    df = pd.concat(series, axis=1)
+    df.columns = col_names
+    return df

@@ -1,18 +1,52 @@
+# PyLagoon
+
+Python client library for Lagoon.
+
+> Disclaimer: this library is still in an experimental state. Take a look at the R, Ruby, and cmdline clients if you are looking for a more stable option.
+
+## Installation
+
+PyLagoon depends on the SqlAlchemy Python package and uses psycopg2 to generate Postgres queries.
+This requires that the postgres libraries to be installed on your host, e.g. `libpq-dev`.
+
+With system dependencies installed, use pip to install via the included setup.py:
+
+    pip install .
+
+## Usage
+
+Configure a new client connection using a LagoonConfig, for example
+
+```python
+from PyLagoon import LagoonConfig, Lagoon
+
+config = 
+lagoon = Lagoon(
+    config=LagoonConfig.load(yaml_file="../../docker/examples/lagoon-client.yaml")
+)
+
 ```
 
-the second argument being the name you give to this new source.
+Sources can then be queried using the `lagoon.source()` method with any of the optional filters described below.
 
-## Reading information from the server
+Entire datasets can be downloaded using the `Source.download_source()` method. Query results can be
+downloaded using the `lagoon.download_query()` method.
 
-Every source can be queried through the `sources` method:
+To generate a query, construct the database schema metadata using PGMeta then use [standard SQLAlchemy query methods](https://docs.sqlalchemy.org/en/13/orm/query.html) to generate the query.
 
-``` python
-srcs = dlagoon.sources(name="gene_protein", version=1)
+```python
+from PyLagoon import PGMeta
+source = lagoon.sources(name="my-source")[0]
+meta = PGMeta(source)
+query = meta.query(meta[source]).filter(...)
+df = lagoon.download_query(query=query, source=[source])
 ```
 
-this returns a list of `Source`s. `dlagoon.sources` accepts various filters:
+## Source Filters
 
-| Key Name               | Type              | Ingest equivalent                     |
+Lagoon.sources accepts the following filters via keyword arguments:
+
+| Key Name               | Type              | cmdline client equivalent                     |
 | ---------------------- | -------------     | ----------------------------          |
 | `offset`               | `str`             | `--offset`                            |
 | `limit`                | `int`             | `--limit`                             |
@@ -27,46 +61,3 @@ this returns a list of `Source`s. `dlagoon.sources` accepts various filters:
 | `createdAfter`         | `str`             | `--created-after`                     |
 | `createdBefore`        | `str`             | `--created-before`                    |
 | `includeDeprecated`    | `bool`            | `--include-deprecated`                |
-
-You can use `dlagoon.my_sources(...)` as a shortcut for
-`dlagoon.sources(user=cfg.USER, ...)`. This will return every Source upload by
-you, provided you were authenticated.
-
-At this point, no dataset content is downloaded, only the source
-descriptions. Once you have a `Source`, you can download it as a
-[`pandas`](http://pandas.pydata.org) data frame with:
-
-``` python
-df = dlagoon.tbl(srcs[0])
-```
-
-and SQL queries created through the use of the
-[sqlalchemy EDSL](http://docs.sqlalchemy.org/en/latest/orm/query.html):
-
-``` python
-df = dlagoon.tbl(query = ...)
-```
-
-See [this section](#server-side-processing) for more detail about the EDSL and
-server-side processing.
-
-
-### Server-side processing
-
-The first step, as usual, is to get a list of sources. Then, you should use the
-`PyLagoon.PGMeta` class to create a client-side representation of the schema
-of these sources:
-
-``` python
-srcs = dlagoon.sources(name=...)
-meta = PGMeta(srcs)
-```
-
-`meta` can be indexed to find one specific schema:
-
-``` python
-t = meta[srcs[0]]
-```
-
-See the [demo](../examples/demo_pylagoon.py) for further information about how
-to create a query with the EDSL and give it to `dlagoon.tbl`.
