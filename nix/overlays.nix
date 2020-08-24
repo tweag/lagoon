@@ -197,7 +197,7 @@
           {
             pylagoon = super.python.pkgs.buildPythonPackage rec
               { pname = "pylagoon";
-                version = "4.0.0";
+                version = "0.1.0";
                 src = "${super.pylagoonTarGz}/PyLagoon-${version}.tar.gz";
                 propagatedBuildInputs =
                   [ superPython.psycopg2
