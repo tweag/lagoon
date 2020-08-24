@@ -2,6 +2,8 @@
 
 Python client library for Lagoon.
 
+> Disclaimer: this library is still in an experimental state. Take a look at the R, Ruby, and cmdline clients if you are looking for a more stable option.
+
 ## Installation
 
 PyLagoon depends on the SqlAlchemy Python package and uses psycopg2 to generate Postgres queries.
