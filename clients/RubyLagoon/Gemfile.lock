@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lagoon (0.0.1)
+    lagoon (0.0.2)
       daru
       json
       recursive-open-struct
@@ -10,14 +10,13 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    backports (3.11.3)
-    daru (0.2.1)
+    backports (3.18.1)
+    daru (0.3)
+      packable (~> 1.3.13)
+    json (2.3.1)
+    packable (1.3.14)
       backports
-      packable (~> 1.3.9)
-    json (2.1.0)
-    packable (1.3.9)
-      backports
-    recursive-open-struct (1.1.0)
+    recursive-open-struct (1.1.2)
     sequel (4.49.0)
 
 PLATFORMS
